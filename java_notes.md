@@ -96,7 +96,7 @@ In the above example of static binding in Java, we have an overloaded sort() met
 
 ##### Example of Dynamic Binding in Java
 In the last section, we have seen example of static binding which clears things that static binding occurs on compile-time, and Type information is used to resolve methods. In this section, we will see an example of dynamic binding in java which occurs during run time and instead of Type or Class information, Object is used to resolve method calls.
-```
+```java
 public class DynamicBindingTest {
 
     public static void main(String args[]) {
