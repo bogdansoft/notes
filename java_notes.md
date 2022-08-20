@@ -1,7 +1,10 @@
 ## Java notes
 
-#### Properties of method overloading in Java
+#### Method overloading in Java
 
+Method overloading in Java is an object-oriented programming concept that allows a programmer to declare two methods of the same name but with different method signatures, like a change in the argument list or a change in the type of argument
+
+Properties of method overloading in Java:
 1) Overloaded methods are bonded using static binding in Java. Which occurs during compile time i.e. when you compile a Java program. During the compilation 
    process, the compiler bind method calls to the actual method.
 
