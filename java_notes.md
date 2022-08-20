@@ -49,3 +49,83 @@ public boolean show(String message){
       return false;
 }
 ```
+
+#### What is Static and Dynamic binding in Java with Example
+
+1) Static binding in Java occurs during Compile time while Dynamic binding occurs during Runtime.
+
+2) private, final and static methods and variables use static binding and are bonded by the compiler while virtual methods are bonded during runtime based upon runtime object.
+
+3) Static binding uses Type(Class in Java)  information for binding while Dynamic binding uses Object to resolve to bind.
+
+3) Overloaded methods are bonded using static binding while overridden methods are bonded using dynamic binding at runtime. Here is an example that will help you to understand both static and dynamic binding in Java.
+
+##### Static Binding Example in Java
+Here is an example of static binding in java, which will clear
+
+ things on how overloaded methods in java are bonded during compile time using Type information.
+```java
+public class StaticBindingTest {
+ 
+    public static void main(String args[])  {
+       Collection c = new HashSet();
+       StaticBindingTest et = new StaticBindingTest();
+       et.sort(c);
+     
+    }
+   
+    //overloaded method takes Collection argument
+    public Collection sort(Collection c){
+        System.out.println("Inside Collection sort method");
+        return c;
+    }
+ 
+   
+   //another overloaded method which takes HashSet argument which is sub class
+    public Collection sort(HashSet hs){
+        System.out.println("Inside HashSet sort method");
+        return hs;
+    }  
+}
+
+Output:
+Inside Collection sort method
+```
+
+In the above example of static binding in Java, we have an overloaded sort() method, one of which accepts Collection and the other accept HashSet. we have called sort() method with HashSet as an object but referenced with type Collection and when we run method with the collection as argument type gets called because it was bonded on compile-time based on the type of variable (Static binding)  which was collection.
+
+##### Example of Dynamic Binding in Java
+In the last section, we have seen example of static binding which clears things that static binding occurs on compile-time, and Type information is used to resolve methods. In this section, we will see an example of dynamic binding in java which occurs during run time and instead of Type or Class information, Object is used to resolve method calls.
+```
+public class DynamicBindingTest {
+
+    public static void main(String args[]) {
+        Vehicle vehicle = new Car(); //here Type is vehicle but object will be Car
+        vehicle.start();       //Car's start called because start() is overridden method
+    }
+}
+
+class Vehicle {
+
+    public void start() {
+        System.out.println("Inside start method of Vehicle");
+    }
+}
+
+class Car extends Vehicle {
+
+    @Override
+    public void start() {
+        System.out.println("Inside start method of Car");
+    }
+}
+
+Output:
+Inside start method of Car
+```
+In this example of Dynamic Binding, we have used the concept of method overriding. Car extends Vehicle and overrides its start() method and when we call start() method from a reference variable of type Vehicle, it doesn't call start() method from Vehicle class instead it calls start() method from Car subclass because object referenced by Vehicle type is a Car object. 
+
+This resolution happens only at runtime because objects are only created during runtime and are called dynamic binding in Java. Dynamic binding is slower than static binding because it occurs in runtime and spends some time to find out the actual method to be called.
+
+That's all on the difference between static and dynamic binding in java. The bottom line is static binding is a compile-time operation while the dynamic binding is a runtime. one uses Type and the other uses Object to bind. static, private, and final methods and variables are resolved using static binding which makes their execution fast because no time is wasted to find the correct method during runtime.
+
