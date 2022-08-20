@@ -197,3 +197,7 @@ Let's go through key points of class loading during code execution:
 6. Bootstrap ClassLoader is invoked and tries to resolve the class, but finds nothing and returns control to Extension ClassLoader.
 7. Extension ClassLoader finds nothing as well and returns control to Application ClassLoader.
 8. Application ClassLoader resolves the class and loads it into memory.
+
+When something goes wrong
+
+Let's have a quick glance at problems related to class loaders. The common root cause comes because runtime dependencies may differ from compile-time ones. For instance, a project may be compiled successfully, but some classes were not added to the classpath. In that case, a class loader cannot find a class. That leads to ClassNotFoundException or NoClassDefFoundError. Another kind of exception happens because a project was compiled with one version of a class, but the classpath includes a different one. In that case NoSuchMethodError or NoSuchFieldError are thrown.
