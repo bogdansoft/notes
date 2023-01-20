@@ -170,3 +170,23 @@ double notByDecimal = 1000_.00; // DOES NOT COMPILE
 double annoyingButLegal = 1_00_0.0_0; // Ugly, but compiles
 double reallyUgly = 1__________2; // Also compiles
 ```
+### Defining Text Blocks
+```
+String block = """doe"""; // DOES NOT COMPILE
+String block = """
+ doe \
+ deer"""; // doe deer
+```
+The output is doe deer since the \ tells Java not to add a new line before deer.
+```
+String block = """
+ doe \n
+ deer
+ """;
+```
+Output:
+```
+doe 
+
+deer
+```
