@@ -150,3 +150,15 @@ package structure; // DOES NOT COMPILE
 String name; // DOES NOT COMPILE
 public class Meerkat { } // DOES NOT COMPILE
 ```
+
+### Primitive types
+Keyword | Type | Min value | Max value | Default value | Example
+--- | --- | --- | --- | --- | --- 
+boolean | true or false | n/a | n/a | false | true
+byte | 8-bit integral value | -128 | 127 | 0 | 123
+short | 16-bit integral value | -32,768 | 32,767 | 0 | 123
+int | 32-bit integral value | -2,147,483,648 | 2,147,483,647 | 0 | 123
+long | 64-bit integral value | -2^63 | 2^63-1 | 0L|  123L
+float | 32-bit floating-point value | n/a | n/a | 0.0f | 123.45f
+double | 64-bit floating-point value | n/a | n/a | 0.0 | 123.456
+char | 16-bit Unicode value | 0 | 65,535 | \u0000 | 'a'
