@@ -128,3 +128,17 @@ In this example of Dynamic Binding, we have used the concept of method overridin
 This resolution happens only at runtime because objects are only created during runtime and are called dynamic binding in Java. Dynamic binding is slower than static binding because it occurs in runtime and spends some time to find out the actual method to be called.
 
 That's all on the difference between static and dynamic binding in java. The bottom line is static binding is a compile-time operation while the dynamic binding is a runtime. one uses Type and the other uses Object to bind. static, private, and final methods and variables are resolved using static binding which makes their execution fast because no time is wasted to find the correct method during runtime.
+
+In the following code, how many of the imports do you think are redundant?
+```
+import java.lang.System;
+import java.lang.*;
+import java.util.Random;
+import java.util.*;
+public class NumberPicker {
+public static void main(String[] args) {
+Random r = new Random();
+System.out.println(r.nextInt(10));
+}}
+```
+The answer is that three of the imports are redundant. Lines 1 and 2 are redundant because everything in java.lang is automatically imported. Line 4 is also redundant in this example because Random is already imported from java.util.Random.
