@@ -129,7 +129,7 @@ This resolution happens only at runtime because objects are only created during 
 
 That's all on the difference between static and dynamic binding in java. The bottom line is static binding is a compile-time operation while the dynamic binding is a runtime. one uses Type and the other uses Object to bind. static, private, and final methods and variables are resolved using static binding which makes their execution fast because no time is wasted to find the correct method during runtime.
 
-In the following code, how many of the imports do you think are redundant?
+### In the following code, how many of the imports do you think are redundant?
 ```
 import java.lang.System;
 import java.lang.*;
@@ -142,7 +142,8 @@ Random r = new Random();
 System.out.println(r.nextInt(10));
 }}
 ```
-The answer is that three of the imports are redundant. Lines 1 and 2 are redundant **because everything in java.lang is automatically imported**. Line 4 is also redundant in this example because Random is already imported from java.util.Random.
+The answer is that three of the imports are redundant. Lines 1 and 2 are redundant #### **because everything in java.lang is automatically imported**. 
+Line 4 is also redundant in this example because Random is already imported from java.util.Random.
 
 ```
 import java.util.*;
