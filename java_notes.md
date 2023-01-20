@@ -162,3 +162,4 @@ long | 64-bit integral value | -2^63 | 2^63-1 | 0L|  123L
 float | 32-bit floating-point value | n/a | n/a | 0.0f | 123.45f
 double | 64-bit floating-point value | n/a | n/a | 0.0 | 123.456
 char | 16-bit Unicode value | 0 | 65,535 | \u0000 | 'a'
+
