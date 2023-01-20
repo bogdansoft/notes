@@ -195,7 +195,4 @@ deer
 include dollar ($), yuan (¥), euro (€), and so on.
 * Identifiers can include numbers but not start with them.
 * A single underscore _ is not allowed as an identifier.
-* You cannot use the same name as a Java reserved word. A reserved word is a special 
-word that Java has held aside so that you are not allowed to use it. Remember that Java 
-is case sensitive, so you can use versions of the keywords that only differ in case. Please 
-don’t, though.
+* You cannot use the same name as a Java reserved word. 
