@@ -163,3 +163,10 @@ float | 32-bit floating-point value | n/a | n/a | 0.0f | 123.45f
 double | 64-bit floating-point value | n/a | n/a | 0.0 | 123.456
 char | 16-bit Unicode value | 0 | 65,535 | \u0000 | 'a'
 
+```
+double notAtStart = _1000.00; // DOES NOT COMPILE
+double notAtEnd = 1000.00_; // DOES NOT COMPILE
+double notByDecimal = 1000_.00; // DOES NOT COMPILE
+double annoyingButLegal = 1_00_0.0_0; // Ugly, but compiles
+double reallyUgly = 1__________2; // Also compiles
+```
