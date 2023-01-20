@@ -142,8 +142,7 @@ Random r = new Random();
 System.out.println(r.nextInt(10));
 }}
 ```
-The answer is that three of the imports are redundant. Lines 1 and 2 are redundant #### **because everything in java.lang is automatically imported**. 
-Line 4 is also redundant in this example because Random is already imported from java.util.Random.
+The answer is that three of the imports are redundant. Lines 1 and 2 are redundant **because everything in java.lang is automatically imported**. Line 4 is also redundant in this example because Random is already imported from java.util.Random.
 
 ```
 import java.util.*;
