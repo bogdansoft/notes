@@ -196,3 +196,16 @@ include dollar ($), yuan (¥), euro (€), and so on.
 * Identifiers can include numbers but not start with them.
 * A single underscore _ is not allowed as an identifier.
 * You cannot use the same name as a Java reserved word. 
+true, false, and null are literal values, so they can’t be variable names.
+```
+long okidentifier;
+float $OK2Identifier;
+boolean _alsoOK1d3ntifi3r;
+char __SStillOkbutKnotsonice$;
+//These examples are not legal:
+int 3DPointClass; // identifiers cannot begin with a number
+byte hollywood@vine; // @ is not a letter, digit, $ or _
+String *$coffee; // * is not a letter, digit, $ or _
+double public; // public is a reserved word
+short _; // a single underscore is not allowed
+```
