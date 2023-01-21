@@ -209,13 +209,39 @@ String *$coffee; // * is not a letter, digit, $ or _
 double public; // public is a reserved word
 short _; // a single underscore is not allowed
 ```
-### Initialization
+### Declaring Multiple Variables
 ```
 int num, String value; // DOES NOT COMPILE
 double d1, double d2; // DOES NOT COMPILE
 int i1; int i2; // DOES NOT COMPILE
 int i3; i4; // DOES NOT COMPILE
 
-boolean b1, b2;
-String s1 = "1", s2;
+boolean b1, b2; //COMPILE
+String s1 = "1", s2; //COMPILE
 ```
+### Uninitialized Local Variables
+Local variables do not have a default value and must be initialized before use. Furthermore, 
+the compiler will report an error if you try to read an uninitialized value. For example, the 
+following code generates a compiler error:
+```
+4: public int notValid() {
+5: int y = 10;
+6: int x;
+7: int reply = x + y; // DOES NOT COMPILE
+8: return reply;
+9: }
+```
+The y variable is initialized to 10. By contrast, x is not initialized before it is used in the 
+expression on line 7, and the compiler generates an error. The compiler is smart enough to 
+recognize variables that have been initialized after their declaration but before they are used. 
+Here’s an example:
+```
+public int valid() {
+ int y = 10;
+ int x; // x is declared here
+ x = 3; // x is initialized here
+ int z; // z is declared here but never initialized or used
+ int reply = x + y;
+ return reply;
+ }
+ ```
