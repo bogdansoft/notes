@@ -301,3 +301,226 @@ any tricky exam questions the exam creators could throw at you.
 - Instance variables: In scope from declaration until the object is eligible for garbage 
 collection
 - Class variables: In scope from declaration until the program ends
+## Switch Statement
+### Java 7 : Switch Statement
+Until Java 7 only integers could be used in switch case and this had been the standard for a long time:
+```
+int value = 5;
+switch (value) {
+    case 1:
+        System.out.println("One");
+        break;
+    case 5:
+        System.out.println("five");
+        break;
+    default:
+        System.out.println("Unknown");
+}
+```
+### Java 8 : Switch Statement
+In Java 8 strings & enum were introduced in case values and switch statements started to evolve
+String Switch Case :
+```
+String day = "Tuesday";
+        switch (day) {
+            case "Monday":
+                System.out.println("Week day");
+                break;
+            case "Tuesday":
+                System.out.println("Week day");
+                break;
+            case "Wednesday":
+                System.out.println("Week day");
+                break;
+            case "Thursday":
+                System.out.println("Week day");
+                break;
+            case "Friday":
+                System.out.println("Week day");
+                break;
+            case "Saturday":
+                System.out.println("Weekend");
+                break;
+            case "Sunday":
+                System.out.println("Weekend");
+                break;
+            default:
+                System.out.println("Unknown");
+        }
+```
+### Enum Switch Case
+```
+enum DAYS {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+DAYS days = DAYS.SUNDAY;
+switch (days) {
+    case MONDAY:
+        System.out.println("Weekdays");
+        break;
+    case TUESDAY:
+        System.out.println("Weekdays");
+        break;
+    case WEDNESDAY:
+        System.out.println("Weekdays");
+        break;
+    case THURSDAY:
+        System.out.println("Weekdays");
+        break;
+    case FRIDAY:
+        System.out.println("Weekdays");
+        break;
+    case SATURDAY:
+        System.out.println("Weekends");
+        break;
+    case SUNDAY:
+        System.out.println("Weekends");
+        break;
+    default:
+        System.out.println("Unknown");
+}
+```
+### Java 12 : Switch Statement
+Java 12 further enhanced the switch statement and introduced switch expressions as a preview feature.
+
+It introduced a flurry of new features:
+
++ You can return values from a switch block and hence switch statements became switch expressions
++ You can have multiple values in a case label
++ You can return value from a switch expression through the arrow operator or through the “break” keyword
+**Return value through break keyword**
+```
+return  switch (day) {
+    case "Monday":
+        break "Weekday";
+    case "Tuesday":
+        break "Weekday";
+    case "Wednesday":
+        break "Weekday";
+    case "Thursday":
+        break "Weekday";
+    case "Friday":
+        break "Weekday";
+    case "Saturday":
+        break "Weekend";
+    case "Sunday":
+        break "Weekend";
+    default:
+        break "Unknown";
+};
+```
+The word “break” can be used to return the result value.
+
+**This word was replaced by “yield” later in Java 13.**
+```
+return  switch (day) {
+    case "Monday":
+        yield  "Weekday";
+    case "Tuesday":
+        yield "Weekday";
+    case "Wednesday":
+        yield "Weekday";
+    case "Thursday":
+        yield "Weekday";
+    case "Friday":
+        yield "Weekday";
+    case "Saturday":
+        yield "Weekend";
+    case "Sunday":
+        yield "Weekend";
+    default:
+        yield "Unknown";
+};
+```
+Return value through arrow operator :
+
+Further instead of returning values using break keyword , Java 12 introduced arrow operators as a simple alternative:
+```
+return  switch (day) {
+            case "Monday"-> "Week day";
+            case "Tuesday"-> "Week day";
+            case "Wednesday"->"Week day";
+            case "Thursday"->"Week day";
+            case "Friday"->"Week day";
+            case "Saturday"-> "Weekend";
+            case "Sunday"-> "Weekend";
+            default->"Unknown";
+        };
+```
+### Multiple case labels :
+
+Also starting Java 12 multiple case values could be provided in a single case statement , So if you observe above example since all 5 case expected here same value so instead of return one by one i can merge or combine multiple case value to single one like below
+```
+return  switch (day) {
+            case "Monday","Tuesday","Wednesday","Thursday","Friday"
+-> "Week day";
+            case "Saturday", "Sunday" -> "Weekend";
+            default->"Unknown";
+        };
+```
+### Java 14 : Switch Statement changes
+What ever switch statement & features we discussed so far in java 12 and 13 those are preview features to access that The flag –enable-preview need to set true .
+But Java 14 just made all the features permanent from being a preview feature
+The flag –enable-preview need not be set starting java 14. & switch statements have evolved into switch expressions!
+
+### Java 17 : Switch Statement / Expression :
+Java 17 LTS is the latest long-term support release for the Java SE platform and it was released on September 15, 2021.
+
+Switch expression features:
+- Pattern matching
+- Gaurded pattern
+- Null cases
+##### Pattern Matching :
+It has introduced a new feature for switch i.e called pattern matching.
+
+You can match patterns in a case label.
+
+In other words you can pass objects in switch condition and this object can be checked for different types in switch case labels.
+```
+return switch (obj) {
+    case Integer i -> "It is an integer";
+    case String s -> "It is a string";
+    case Employee s -> "It is a Employee";
+     default -> "It is none of the known data types";
+};
+```
+In the above example I am passing an object to the switch condition. This was not possible until Java 17. And then this object can be checked for a particular data type and assigned to a variable as well.
+
+For example consider the case :
+```
+case Integer i- > "It is an integer";
+```
+The passed object is checked for the type “Integer” and then assigned to the variable “i” if it is an integer. And through the arrow operator the string “It is an integer ” is returned .
+
+##### Gaurded Patterns :
+Let’s take this use case.
+
+Inside the case label where I have checked for a “Employee” instance , I want to do an additional check.
+
+Thinking traditionally , you could be doing this after the case statement.
+
+Something like this:
+```
+case Employee emp:
+
+if(emp.getDept().equals("IT")) {
+yield "This is IT Employee";
+}
+```
+But Java 17 has introduced “Guarded Patterns” . You can do this check in the case label itself like below
+```
+return switch (obj) {
+    case Integer i -> "It is an integer";
+    case String s -> "It is a string";
+    case Employee employee && employee.getDept().equals("IT") -> "IT Employee";
+    default -> "It is none of the known data types";
+};
+```
+##### Null Cases :
+You could never pass a null value to switch statements prior to Java 17 without a Null pointer exception being thrown.
+
+Java 17 allows you to handle it this way
+```
+case null -> "It is a null object";
+```
+If you have the above switch expression you will never get Null Pointer exception if the object you pass is null.
