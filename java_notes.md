@@ -209,3 +209,6 @@ String *$coffee; // * is not a letter, digit, $ or _
 double public; // public is a reserved word
 short _; // a single underscore is not allowed
 ```
+```
+int num, String value; // DOES NOT COMPILE
+```
