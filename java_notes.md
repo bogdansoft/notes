@@ -256,5 +256,42 @@ public class VarKeyword {
  var name = "Hello"; //COMPILE
  var size = 7; //COMPILE
  }
+ 
+ public void reassignment() {
+   var number = 7;
+   number = 4;
+   number = "five"; // DOES NOT COMPILE
+ }
+ 
+ public void breakingDeclaration() {
+  var silly
+   = 1;
+ }
+ 
+ public void twoTypes() {
+   int a, var b = 3; // DOES NOT COMPILE
+   var n = null; // DOES NOT COMPILE
+ }
+ 
+ public int addition(var a, var b) { // DOES NOT COMPILE
+ return a + b;
+}
 }
 ```
+var is not a reserved word and allowed to be used as an identifier. It is considered a reserved type name. A reserved type name means it 
+cannot be used to define a type, such as a class, interface, or enum. Do you think this is legal?
+```
+package var;
+public class Var {
+ public void var() {
+ var var = "var";
+ }
+ public void Var() {
+ Var var = new Var();
+ }
+}
+```
+Believe it or not, this code does compile. Java is case sensitive, so Var doesn’t introduce 
+any conflicts as a class name. Naming a local variable var is legal. Please don’t write code 
+that looks like this at your job! But understanding why it works will help get you ready for 
+any tricky exam questions the exam creators could throw at you.
