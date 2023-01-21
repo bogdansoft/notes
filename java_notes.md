@@ -278,7 +278,7 @@ public class VarKeyword {
 }
 }
 ```
-var is not a reserved word and allowed to be used as an identifier. It is considered a reserved type name. A reserved type name means it 
+**var is not a reserved word and allowed to be used as an identifier**. It is considered a reserved type name. A reserved type name means it 
 cannot be used to define a type, such as a class, interface, or enum. Do you think this is legal?
 ```
 package var;
