@@ -295,3 +295,9 @@ Believe it or not, this code does compile. Java is case sensitive, so Var doesnâ
 any conflicts as a class name. Naming a local variable var is legal. Please donâ€™t write code 
 that looks like this at your job! But understanding why it works will help get you ready for 
 any tricky exam questions the exam creators could throw at you.
+###  review the rules on scope:
+- Local variables: In scope from declaration to the end of the block
+- Method parameters: In scope for the duration of the method
+- Instance variables: In scope from declaration until the object is eligible for garbage 
+collection
+- Class variables: In scope from declaration until the program ends
