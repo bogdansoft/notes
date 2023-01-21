@@ -525,6 +525,7 @@ case null -> "It is a null object";
 ```
 ### How to use switch?
 If you have the above switch expression you will never get Null Pointer exception if the object you pass is null.
+
 1.With arrow labels when a full block is needed:
 ```
 int value = switch (greeting) {
