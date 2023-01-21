@@ -209,6 +209,10 @@ String *$coffee; // * is not a letter, digit, $ or _
 double public; // public is a reserved word
 short _; // a single underscore is not allowed
 ```
+### Initialization
 ```
 int num, String value; // DOES NOT COMPILE
+double d1, double d2; // DOES NOT COMPILE
+int i1; int i2; // DOES NOT COMPILE
+int i3; i4; // DOES NOT COMPILE
 ```
