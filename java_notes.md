@@ -523,4 +523,37 @@ Java 17 allows you to handle it this way
 ```
 case null -> "It is a null object";
 ```
+### How to use switch?
 If you have the above switch expression you will never get Null Pointer exception if the object you pass is null.
+1.With arrow labels when a full block is needed:
+```
+int value = switch (greeting) {
+    case "hi" -> {
+        System.out.println("I am not just yielding!");
+        yield 1;
+    }
+    case "hello" -> {
+        System.out.println("Me too.");
+        yield 2;
+    }
+    default -> {
+        System.out.println("OK");
+        yield -1;
+    }
+};
+```
+2.With traditional blocks:
+```
+int value = switch (greeting) {
+    case "hi":
+        System.out.println("I am not just yielding!");
+        yield 1;
+    case "hello":
+        System.out.println("Me too.");
+        yield 2;
+    default:
+        System.out.println("OK");
+        yield -1;
+};
+```
+The break with value statement is dropped in favour of a yield statement.
