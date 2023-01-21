@@ -245,3 +245,16 @@ public int valid() {
  return reply;
  }
  ```
+### Local variable type inference(var)
+You can only use this feature for 
+local variables
+```
+public class VarKeyword {
+ var tricky = "Hello"; // DOES NOT COMPILE
+ 
+ public void whatTypeAmI() {
+ var name = "Hello"; //COMPILE
+ var size = 7; //COMPILE
+ }
+}
+```
