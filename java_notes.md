@@ -559,7 +559,7 @@ int value = switch (greeting) {
 ```
 The break with value statement is dropped in favour of a yield statement.
 
-Numeric Promotion Rules
+### Numeric Promotion Rules
 1. If two values have different data types, Java will automatically promote one of the 
 values to the larger of the two data types.
 2. If one of the values is integral and the other is floating-point, Java will automatically 
