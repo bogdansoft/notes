@@ -587,3 +587,14 @@ var z = x * y;
 33
 Long
 ```
+```
+short w = 14;
+float x = 13;
+double y = 30;
+var z = w * x / y;
+System.out.println(z);
+System.out.println(((Object)z).getClass().getSimpleName());
+//Output:
+6.066666666666666
+Double
+```
