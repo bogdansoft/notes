@@ -638,3 +638,4 @@ exprA || exprB <-- this means evaluate exprA and only if this is false then eval
 #### && -> result like multplying
 #### || -> result like adding
 
+![Logic operators table](https://github.com/bogdansoft/notes/blob/main/images/logic%20operators.png)
