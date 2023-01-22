@@ -634,3 +634,7 @@ EDIT:
 exprA | exprB <-- this means evaluate exprA then evaluate exprB then do the |.
 
 exprA || exprB <-- this means evaluate exprA and only if this is false then evaluate exprB and do the ||.
+
+#### && -> result like multplying
+#### || -> result like adding
+
