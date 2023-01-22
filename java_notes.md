@@ -569,3 +569,21 @@ they’re used with a Java binary arithmetic operator with a variable (as oppose
 value), even if neither of the operands is int.Unary operators are excluded from this 
 rule. For example, applying ++ to a short value results in a short value
 4. After all promotion has occurred and the operands have the same data type, the resulting value will have the same data type as its promoted operands.
+
+```
+short a = 11, b = 2;
+var c = a * b;
+System.out.println(c);
+System.out.println(((Object)c).getClass().getSimpleName());
+//Output:
+22
+Integer
+```
+```
+int x = 1;
+long y = 33;
+var z = x * y;
+//Output:
+33
+Long
+```
