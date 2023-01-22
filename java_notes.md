@@ -566,5 +566,6 @@ values to the larger of the two data types.
 promote the integral value to the floating-point value’s data type.
 3. Smaller data types, namely, byte, short, and char, are first promoted to int any time 
 they’re used with a Java binary arithmetic operator with a variable (as opposed to a 
-value), even if neither of the operands is int.
+value), even if neither of the operands is int.Unary operators are excluded from this 
+rule. For example, applying ++ to a short value results in a short value
 4. After all promotion has occurred and the operands have the same data type, the resulting value will have the same data type as its promoted operands.
