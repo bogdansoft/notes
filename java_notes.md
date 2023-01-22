@@ -598,3 +598,39 @@ System.out.println(((Object)z).getClass().getSimpleName());
 6.066666666666666
 Double
 ```
+### Casting Values
+```
+int fur = (int)5;
+int hair = (short) 2;
+String type = (String) "Bird";
+short tail = (short)(4 + 10);
+long feathers = 10(long); // DOES NOT COMPILE
+float egg = 2.0 / 9; // DOES NOT COMPILE
+int tadpole = (int)5 * 2L; // DOES NOT COMPILE
+short frog = 3 - 2.0; // DOES NOT COMPILE
+
+short mouse = 10;
+short hamster = 3;
+short capybara = (short)(mouse * hamster);
+short capybara = (short)mouse * hamster; // DOES NOT COMPILE
+
+System.out.print(null instanceof Object); // false
+System.out.print(null instanceof null); // DOES NOT COMPILE
+
+public void openZoo(Number time) {
+ if(time instanceof String) // DOES NOT COMPILE
+ System.out.print(time);
+}
+```
+& <-- verifies both operands
+&& <-- stops evaluating if the first operand evaluates to false since the result will be false
+
+(x != 0) & (1/x > 1) <-- this means evaluate (x != 0) then evaluate (1/x > 1) then do the &. the problem is that for x=0 this will throw an exception.
+
+(x != 0) && (1/x > 1) <-- this means evaluate (x != 0) and only if this is true then evaluate (1/x > 1) so if you have x=0 then this is perfectly safe and won't throw any exception if (x != 0) evaluates to false the whole thing directly evaluates to false without evaluating the (1/x > 1).
+
+EDIT:
+
+exprA | exprB <-- this means evaluate exprA then evaluate exprB then do the |.
+
+exprA || exprB <-- this means evaluate exprA and only if this is false then evaluate exprB and do the ||.
