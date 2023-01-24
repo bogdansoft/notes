@@ -639,3 +639,21 @@ exprA || exprB <-- this means evaluate exprA and only if this is false then eval
 #### || -> result like adding
 
 ![Logic operators table](https://github.com/bogdansoft/notes/blob/main/images/logic%20operators.png)
+
+### Shortening Code with Pattern Matching
+```
+//before Java 16
+void compareIntegers(Number number) {
+ if(number instanceof Integer) {
+ Integer data = (Integer)number;
+System.out.print(data.compareTo(5));
+ }
+}
+
+//with Java 16
+void compareIntegers(Number number) {
+ if(number instanceof Integer data) {
+ System.out.print(data.compareTo(5));
+ }
+}
+```
