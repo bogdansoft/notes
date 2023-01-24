@@ -695,3 +695,22 @@ Number value = 123;
  if(value instanceof List) {}
  if(value instanceof List data) {}
 ```
+### Flow Scoping
+The compiler applies flow scoping when working with pattern matching. Flow scoping
+means the variable is only in scope when the compiler can definitively determine its type. 
+Flow scoping is unlike any other type of scoping in that it is not strictly hierarchical like instance, class, or local scoping. It is determined by the compiler based on the branching and 
+flow of the program.
+Given this information, can you see why the following does not compile?
+```
+void printIntegersOrNumbersGreaterThan5(Number number) {
+ if(number instanceof Integer data || data.compareTo(5)>0)//NOT COMPILE
+ System.out.print(data);
+}
+```
+But:
+```
+void printIntegersOrNumbersGreaterThan5(Number number) {
+ if(number instanceof Integer data && data.compareTo(5)>0)//COMPILE
+ System.out.print(data);
+}
+```
