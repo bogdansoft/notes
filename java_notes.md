@@ -470,6 +470,53 @@ Switch expression features:
 - Pattern matching
 - Gaurded pattern
 - Null cases
+
+The following is a list of all data types supported by switch statements:
++ int and Integer
++ byte and Byte
++ short and Short
++ char and Character
++ String
++ enum values
++ var (if the type resolves to one of the preceding types)
+
+Another rules:
+1. All of the branches of a switch expression that do not throw an exception must return 
+a consistent data type (if the switch expression returns a value).
+2. If the switch expression returns a value, then every branch that isn’t an expression must 
+yield a value.
+3. A default branch is required unless all cases are covered or no value is returned.
+
+```
+int fish = 5;
+int length = 12;
+var name = switch(fish) {
+ case 1 -> "Goldfish";
+ case 2 -> {yield "Trout";}
+ case 3 -> {
+ if(length > 10) yield "Blobfish";
+ else yield "Green";
+ }
+ default -> "Swordfish";
+};
+```
+The yield keyword is equivalent to a return statement within a switch expression and 
+is used to avoid ambiguity about whether you meant to exit the block or method around the 
+switch expression.
+Referring to our second rule for switch expressions, yield statements are not optional if the 
+switch statement returns a value.
+```
+ int fish = 5;
+ int length = 12;
+ var name = switch(fish) {
+ case 1 -> "Goldfish";
+ case 2 -> {} // DOES NOT COMPILE
+ case 3 -> {
+ if(length > 10) yield "Blobfish";
+ } // DOES NOT COMPILE
+ default -> "Swordfish";
+ };
+ ```
 ##### Pattern Matching :
 It has introduced a new feature for switch i.e called pattern matching.
 
@@ -714,3 +761,7 @@ void printIntegersOrNumbersGreaterThan5(Number number) {
  System.out.print(data);
 }
 ```
+### Difference between Return and Break statements
+**break** is used to exit (escape) the for-loop, while-loop, switch-statement that you are currently executing.
+
+**return** will exit the entire method you are currently executing (and possibly return a value to the caller, optional).
