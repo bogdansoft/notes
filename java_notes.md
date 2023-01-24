@@ -657,3 +657,18 @@ void compareIntegers(Number number) {
  }
 }
 ```
+### Reassigning Pattern Variables
+While possible, it is a bad practice to reassign a pattern variable since doing so can lead to 
+ambiguity about what is and is not in scope.
+```
+ if(number instanceof Integer data) {
+ data = 10;
+ }
+ ```
+The reassignment can be prevented with a final modifier, but it is better not to reassign 
+the variable at all.
+```
+ if(number instanceof final Integer data) {
+ data = 10; // DOES NOT COMPILE
+ }
+ ```
