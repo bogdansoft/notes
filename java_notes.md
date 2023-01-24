@@ -761,7 +761,7 @@ void printIntegersOrNumbersGreaterThan5(Number number) {
  System.out.print(data);
 }
 ```
-### Difference between Return and Break statements
+### Difference between Return, Continue and Break statements
 **break**:- These transfer statement bypass the correct flow of execution to outside of the current loop by skipping on the remaining iteration
 ```
 class test
