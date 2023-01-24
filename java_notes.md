@@ -762,6 +762,70 @@ void printIntegersOrNumbersGreaterThan5(Number number) {
 }
 ```
 ### Difference between Return and Break statements
-**break** is used to exit (escape) the for-loop, while-loop, switch-statement that you are currently executing.
+**break**:- These transfer statement bypass the correct flow of execution to outside of the current loop by skipping on the remaining iteration
+```
+class test
+{
+    public static void main(String []args)
+    {
+        for(int i=0;i<10;i++)
+        {
+            if(i==5)break;
+             System.out.println(i);
+        }
+    }
+} 
 
-**return** will exit the entire method you are currently executing (and possibly return a value to the caller, optional).
+//output will be 
+0
+1
+2
+3
+4
+```
+**continue** :-These transfer Statement will bypass the flow of execution to starting point of the loop inorder to continue with next iteration by skipping all the remaining instructions .
+```
+class test
+{
+    public static void main(String []args)
+    {
+        for(int i=0;i<10;i++)
+        {
+            if(i==5)continue;
+            System.out.println(i);
+        }
+    }
+} 
+
+//output will be:
+0
+1
+2
+3
+4
+6
+7
+8
+9 
+```
+**return** :- At any time in a method the return statement can be used to cause execution to branch back to the caller of the method. Thus, the return statement immediately terminates the method in which it is executed. The following example illustrates this point. Here, return causes execution to return to the Java run-time system, since it is the run-time system that calls main( ).
+```
+class test
+{
+    public static void main(String []args)
+    {
+        for(int i=0;i<10;i++)
+        {
+            if(i==5)  return;
+            System.out.println(i);
+        }
+    }
+} 
+
+//output will be :
+0
+1
+2
+3
+4
+```
