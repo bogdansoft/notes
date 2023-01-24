@@ -672,3 +672,26 @@ the variable at all.
  data = 10; // DOES NOT COMPILE
  }
  ```
+### Pattern Variables and Expressions
+Pattern matching includes expressions that can be used to filter data out, such as in the following example:
+```
+void printIntegersGreaterThan5(Number number) {
+ if(number instanceof Integer data && data.compareTo(5)>0)
+ System.out.print(data);
+}
+```
+### Subtypes
+The type of the pattern variable must be a subtype of the variable on the left side of the 
+expression. It also cannot be the same type. This rule does not exist for traditional instanceof
+operator expressions, though. Consider the following two uses of the instanceof operator:
+```
+Integer value = 123;
+if(value instanceof Integer) {}
+if(value instanceof Integer data) {} // DOES NOT COMPILE
+```
+But:
+```
+Number value = 123;
+ if(value instanceof List) {}
+ if(value instanceof List data) {}
+```
