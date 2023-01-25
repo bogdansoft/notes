@@ -35,3 +35,5 @@ This appends a string ” base” to str. But wait, how is this possible, since 
 When the above statement is executed, the VM takes the value of String str, i.e. “knowledge” and appends ” base”, giving us the value “knowledge base”. Now, since Strings are immutable, the VM can’t assign this value to str, so it creates a new String object, gives it a value “knowledge base”, and gives it reference str.
 
 An important point to note here is that, while the String object is immutable, its reference variable is not. So that’s why, in the above example, the reference was made to refer to a newly formed String object.
+
+** You need to remember that a string is a sequence of characters and Java counts from 0 when indexed**
