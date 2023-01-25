@@ -36,4 +36,4 @@ When the above statement is executed, the VM takes the value of String str, i.e.
 
 An important point to note here is that, while the String object is immutable, its reference variable is not. So that’s why, in the above example, the reference was made to refer to a newly formed String object.
 
-** You need to remember that a string is a sequence of characters and Java counts from 0 when indexed**
+**You need to remember that a string is a sequence of characters and Java counts from 0 when indexed**
