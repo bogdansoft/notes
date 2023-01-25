@@ -159,7 +159,7 @@ stripIndent() | Removes all leading incidental whitespace | Yes | No
 ```
 10: var block = """
 11: a
-12: b
+12:  b
 13: c""";
 14: var concat = " a\n"
 15: + " b\n"
@@ -174,3 +174,17 @@ stripIndent() | Removes all leading incidental whitespace | Yes | No
 
 Line 17 counts the six characters in block, which are the three letters, the blank space 
 before b, and the \n after a and b.
+
+##### Translating Escapes
+```
+public String translateEscapes()
+```
+The following code shows how to use these methods:
+```
+var str = "1\\t2";
+System.out.println(str); // 1\t2
+System.out.println(str.translateEscapes()); // 1 2
+```
+The first line prints the literal string \t because the backslash is escaped. The second 
+line prints an actual tab since we translated the escape. This method can be used for escape 
+sequences such as \t (tab), \n (new line), \s (space), \" (double quote), and \' (single quote.
