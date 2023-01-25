@@ -70,3 +70,65 @@ Unlike charAt(), the indexOf()
 method doesn’t throw an exception if it can’t find a match, instead returning –1. Because 
 indexes start with 0, the caller knows that –1 couldn’t be a valid index. This makes it a 
 common value for a method to signify to the caller that no match is found.
+
+##### public String substring(int beginIndex)
+
+public String substring(int beginIndex, int endIndex)
+```
+var name = "animals";
+System.out.println(name.substring(3)); // mals
+System.out.println(name.substring(name.indexOf('m'))); // mals
+System.out.println(name.substring(3, 4)); // m
+System.out.println(name.substring(3, 7)); // mals
+
+System.out.println(name.substring(3, 3)); // empty string
+System.out.println(name.substring(3, 2)); // exception
+System.out.println(name.substring(3, 8)); // exception
+```
+##### Searching for Substrings
+```
+public boolean startsWith(String prefix)
+public boolean endsWith(String suffix)
+public boolean contains(CharSequence charSeq)
+```
+The following code shows how to use these methods:
+```
+System.out.println("abc".startsWith("a")); // true
+System.out.println("abc".startsWith("A")); // false
+
+System.out.println("abc".endsWith("c")); // true
+System.out.println("abc".endsWith("a")); // false
+
+System.out.println("abc".contains("b")); // true
+System.out.println("abc".contains("B")); // false
+```
+##### Replacing Values
+```
+public String replace(char oldChar, char newChar)
+public String replace(CharSequence target, CharSequence replacement)
+```
+The following code shows how to use these methods:
+```
+System.out.println("abcabc".replace('a', 'A')); // AbcAbc
+System.out.println("abcabc".replace("a", "A")); // AbcAbc
+```
+##### Removing Whitespace
+These methods remove blank space from the beginning and/or end of a String. The strip()
+and trim() methods remove whitespace from the beginning and end of a String. 
+```
+public String strip()//removes whitespace from the beginning and end of a String and supports Unicode 
+public String stripLeading()//removes whitespace from the beginning of the String and leaves it at the end
+public String stripTrailing()//removes whitespace from the end of the String and leaves it at the beginning
+public String trim()//removes whitespace from the beginning and end of a String
+```
+The following code shows how to use these methods:
+```
+System.out.println("abc".strip()); // abc
+System.out.println("\t a b c\n".strip()); // a b c
+
+String text = " abc\t ";
+System.out.println(text.trim().length()); // 3
+System.out.println(text.strip().length()); // 3
+System.out.println(text.stripLeading().length()); // 5
+System.out.println(text.stripTrailing().length());// 4
+```
