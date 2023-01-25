@@ -53,8 +53,11 @@ System.out.println(name.charAt(7)); // exception
 ```
 ##### public int indexOf(int ch)
 public int indexOf(int ch, int fromIndex)
+
 public int indexOf(String str)
+
 public int indexOf(String str, int fromIndex)
+
 The following code shows you how to use indexOf():
 ```
 var name = "animals";
