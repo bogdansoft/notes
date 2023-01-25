@@ -7,7 +7,7 @@ System.out.println(1 + 2 + "c"); // 3c
 System.out.println("c" + 1 + 2); // c12
 System.out.println("c" + null); // cnull
 ```
-### Concatination
+### Concatenation
 ```
  String s="Sachin"+" Tendulkar";  
  System.out.println(s);//Sachin Tendulkar 
