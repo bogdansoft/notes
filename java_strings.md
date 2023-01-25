@@ -155,3 +155,22 @@ indent(n) where n > 0 |Adds n spaces to beginning of each line | Yes | Yes
 indent(n) where n == 0 | No change | Yes|  Yes
 indent(n) where n < 0 | Removes up to n spaces from each line where the same number of characters is removed from each non-blank line | Yes | Yes
 stripIndent() | Removes all leading incidental whitespace | Yes | No
+
+```
+10: var block = """
+11: a
+12: b
+13: c""";
+14: var concat = " a\n"
+15: + " b\n"
+16: + " c";
+17: System.out.println(block.length()); // 6
+18: System.out.println(concat.length()); // 9
+19: System.out.println(block.indent(1).length()); // 10
+20: System.out.println(concat.indent(-1).length()); // 7
+21: System.out.println(concat.indent(-4).length()); // 6
+22: System.out.println(concat.stripIndent().length()); // 6
+```
+
+Line 17 counts the six characters in block, which are the three letters, the blank space 
+before b, and the \n after a and b.
