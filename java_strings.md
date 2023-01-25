@@ -132,3 +132,18 @@ System.out.println(text.strip().length()); // 3
 System.out.println(text.stripLeading().length()); // 5
 System.out.println(text.stripTrailing().length());// 4
 ```
+##### Working with Indentation
+Now that Java supports text blocks, it is helpful to have methods that deal with indentation. 
+```
+public String indent(int numberSpaces)
+public String stripIndent()
+```
+The indent() method adds the same number of blank spaces to the beginning of each 
+line if you pass a positive number. If you pass a negative number, it tries to remove that 
+number of whitespace characters from the beginning of the line. If you pass zero, the indentation will not change.
+
+The stripIndent() method is useful when a String was built with concatenation rather than 
+using a text block. It gets rid of all incidental whitespace. This means that all non-blank lines 
+are shifted left so the same number of whitespace characters are removed from each line and 
+the first character that remains is not blank. Like indent(), \r\n is turned into \n. However, the 
+stripIndent() method does not add a trailing line break if it is missing.
