@@ -147,3 +147,11 @@ using a text block. It gets rid of all incidental whitespace. This means that al
 are shifted left so the same number of whitespace characters are removed from each line and 
 the first character that remains is not blank. Like indent(), \r\n is turned into \n. However, the 
 stripIndent() method does not add a trailing line break if it is missing.
+
+**Rules for indent() and stripIndent()**
+Method | Indent change | Normalizes existing line breaks| Adds line break at end if missing
+--- | --- | --- | ---
+indent(n) where n > 0 |Adds n spaces to beginning of each line | Yes | Yes
+indent(n) where n == 0 | No change | Yes|  Yes
+indent(n) where n < 0 | Removes up to n spaces from each line where the same number of characters is removed from each non-blank line | Yes | Yes
+stripIndent() | Removes all leading incidental whitespace | Yes | No
