@@ -44,3 +44,22 @@ An important point to note here is that, while the String object is immutable, i
 var name = "animals";
 System.out.println(name.length()); // 7
 ```
+##### public char charAt(int index)
+```
+var name = "animals";
+System.out.println(name.charAt(0)); // a
+System.out.println(name.charAt(6)); // s
+System.out.println(name.charAt(7)); // exception
+```
+##### public int indexOf(int ch)
+public int indexOf(int ch, int fromIndex)
+public int indexOf(String str)
+public int indexOf(String str, int fromIndex)
+The following code shows you how to use indexOf():
+```
+var name = "animals";
+System.out.println(name.indexOf('a')); // 0
+System.out.println(name.indexOf("al")); // 4
+System.out.println(name.indexOf('a', 4)); // 4
+System.out.println(name.indexOf("al", 5)); // -1
+```
