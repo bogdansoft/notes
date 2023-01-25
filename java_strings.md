@@ -66,3 +66,7 @@ System.out.println(name.indexOf("al")); // 4
 System.out.println(name.indexOf('a', 4)); // 4
 System.out.println(name.indexOf("al", 5)); // -1
 ```
+Unlike charAt(), the indexOf()
+method doesn’t throw an exception if it can’t find a match, instead returning –1. Because 
+indexes start with 0, the caller knows that –1 couldn’t be a valid index. This makes it a 
+common value for a method to signify to the caller that no match is found.
