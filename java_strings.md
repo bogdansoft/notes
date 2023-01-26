@@ -276,3 +276,22 @@ assume you meant the end. That means this code is legal:
 var sb = new StringBuilder("abcdef");
 sb.delete(1, 100); // sb = a
 ```
+#### Replacing Portions 
+```
+public StringBuilder replace(int startIndex, int endIndex, String newString)
+```
+The following code shows how to use this method:
+```
+var builder = new StringBuilder("pigeon dirty");
+builder.replace(3, 6, "sty");
+System.out.println(builder); // pigsty dirty
+```
+First, Java deletes the characters starting with index 3 and ending right before index 6. 
+This gives us pig dirty. Then Java inserts the value "sty" in that position.
+In this example, the number of characters removed and inserted are the same. However, 
+there is no reason they have to be.
+```
+var builder = new StringBuilder("pigeon dirty");
+builder.replace(3, 100, "");
+System.out.println(builder);//pig
+```
