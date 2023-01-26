@@ -233,3 +233,15 @@ an exception because a floating-point number is used when an integer value is ex
 ```
 var str = "Food: %d tons".formatted(2.0); // IllegalFormatConversionException
 ```
+### StringBuilder
+```
+StringBuilder sb1 = new StringBuilder();
+StringBuilder sb2 = new StringBuilder("animal");
+StringBuilder sb3 = new StringBuilder(10);//capacity
+```
+append()
+```
+var sb = new StringBuilder().append(1).append('c');
+sb.append("-").append(true);
+System.out.println(sb); // 1c-true
+```
