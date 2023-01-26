@@ -207,7 +207,7 @@ System.out.println(String.format("Hello %s, order %d is ready",
 System.out.println("Hello %s, order %d is ready"
  .formatted(name, orderId));
  ```
-In the format() and formatted() operations, the parameters are inserted and formatted via symbols in the order that they are provided in the vararg. 
+In the format() and formatted() operations, the parameters are inserted and formatted via symbols in the order that they are provided in the vararg. 
 
 #### Common formatting symbols
 Symbol | Description
