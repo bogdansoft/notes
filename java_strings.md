@@ -245,4 +245,34 @@ var sb = new StringBuilder().append(1).append('c');
 sb.append("-").append(true);
 System.out.println(sb); // 1c-true
 ```
+### Inserting Data
+```
+public StringBuilder insert(int offset, String str)
+```
+Pay attention to the offset in these examples. It is the index where we want to insert the 
+requested parameter.
+```
+var sb = new StringBuilder("animals");
+sb.insert(7, "-"); // sb = animals
+sb.insert(0, "-"); // sb = -animals
+sb.insert(4, "-"); // sb = -ani-mals
+System.out.println(sb);
+```
 
+#### Deleting Contents
+```
+public StringBuilder delete(int startIndex, int endIndex)
+public StringBuilder deleteCharAt(int index)
+```
+```
+var sb = new StringBuilder("abcdef");
+sb.delete(1, 3); // sb = adef
+sb.deleteCharAt(5); // exception
+```
+The delete() method is more flexible than some others when it comes to array indexes. 
+If you specify a second parameter that is past the end of the StringBuilder, Java will just 
+assume you meant the end. That means this code is legal:
+```
+var sb = new StringBuilder("abcdef");
+sb.delete(1, 100); // sb = a
+```
