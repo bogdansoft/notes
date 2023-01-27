@@ -855,3 +855,24 @@ The following shows how to use these methods:
 double c = Math.ceil(3.14); // 4.0
 double f = Math.floor(3.14); // 3.0
 ```
+#### Calculating Exponents
+```
+public static double pow(double number, double exponent)
+```
+The following shows how to use this method:
+```
+double squared = Math.pow(5, 2); // 25.0
+```
+#### Generating Random Numbers
+The random() method returns a value greater than or equal to 0 and less than 1. The method 
+signature is as follows:
+```
+public static double random()
+```
+The following shows how to use this method:
+```
+double num = Math.random();
+```
+Since it is a random number, we can’t know the result in advance. However, we can rule 
+out certain numbers. For example, it can’t be negative because that’s less than 0. It can’t be 
+1.0 because that’s not less than 1.
