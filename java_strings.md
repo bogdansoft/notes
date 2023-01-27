@@ -71,9 +71,11 @@ method doesn’t throw an exception if it can’t find a match, instead returnin
 indexes start with 0, the caller knows that –1 couldn’t be a valid index. This makes it a 
 common value for a method to signify to the caller that no match is found.
 
-##### public String substring(int beginIndex)
-
+##### Substring
+```
+public String substring(int beginIndex)
 public String substring(int beginIndex, int endIndex)
+```
 ```
 var name = "animals";
 System.out.println(name.substring(3)); // mals
