@@ -73,3 +73,16 @@ compareTo():
 - For strings, one is smaller if it is a prefix of another.
 - For strings/characters, numbers are smaller than letters.
 - For strings/characters, uppercase is smaller than lowercase.
+
+#### Using mismatch()
+If the arrays are equal, mismatch() returns -1. Otherwise, it returns the first index where they differ.
+```
+System.out.println(Arrays.mismatch(new int[] {1}, new int[] {1}));//-1
+System.out.println(Arrays.mismatch(new String[] {"a"}, new String[] {"A"}));//0
+System.out.println(Arrays.mismatch(new int[] {1, 2}, new int[] {1}));//1
+```
+Method | When arrays contain the same data | When arrays are different
+--- | --- | ---
+equals() | true | false
+compare() | 0 | Positive or negative number
+mismatch() | -1 | Zero or positive index
