@@ -309,3 +309,35 @@ System.out.println(sb);//CBA
 **Often StringBuilder is used internally for performance purposes**, but the end result 
 needs to be a String. For example, maybe it needs to be passed to another method that is 
 expecting a String.
+
+#### Comparing equals() and ==
+Consider the following code that uses == with objects:
+```
+var one = new StringBuilder();
+var two = new StringBuilder();
+var three = one.append("a");
+System.out.println(one == two); // false
+System.out.println(one == three); // true
+```
+```
+var name = "a";
+var builder = new StringBuilder("a");
+System.out.println(name == builder); // DOES NOT COMPILE
+```
+#### Intern method
+```
+var x = "Hello World";
+var y = new String("Hello World");
+System.out.println(x == y); // false
+```
+You can also do the opposite and tell Java to use the string pool. The intern() method will 
+use an object in the string pool if one is present.
+```
+public String intern()
+```
+If the literal is not yet in the string pool, Java will add it at this time.
+```
+var name = "Hello World";
+var name2 = new String("Hello World").intern();
+System.out.println(name == name2); // true
+```
