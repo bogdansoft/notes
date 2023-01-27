@@ -1,4 +1,4 @@
-## Java notes
+## Java core
 
 ### Method overloading in Java
 
