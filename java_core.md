@@ -881,7 +881,7 @@ out certain numbers. For example, it can’t be negative because that’s less t
 ```
 import java.time.*; // import time classes
 ```
-+ LocalDate Contains just a date—no time and no time zone. A good example of LocalDate is your birthday this year. It is your birthday for a full day, regardless of what time it is.
++ LocalDate Contains just a date—no time and no time zone. A good example of LocalDate is your birthday this year. It is your birthday for a full day, regardless of what time it is.
 + LocalTime Contains just a time—no date and no time zone. A good example of 
 LocalTime is midnight. It is midnight at the same time every day.
 + LocalDateTime Contains both a date and time but no time zone. A good example of 
@@ -894,8 +894,39 @@ you’ll have to get up really early since the call is at 6:00 a.m. local time!
 
 You obtain date and time instances using a static method:
 ```
-System.out.println(LocalDate.now());
-System.out.println(LocalTime.now());
-System.out.println(LocalDateTime.now());
-System.out.println(ZonedDateTime.now());
+System.out.println(LocalDate.now());//2021–10–25
+System.out.println(LocalTime.now());//09:13:07.768
+System.out.println(LocalDateTime.now());//2021–10–25T09:13:07.768
+System.out.println(ZonedDateTime.now());//2021–10–25T09:13:07.769–05:00[America/New_York]
 ```
+**Greenwich Mean Time** is a time zone in Europe that is used as time zone zero when discussing offsets. You might have also heard of Coordinated Universal Time, which is a time 
+zone standard. It is abbreviated as **UTC**, as a compromise between the English and French 
+names. (That’s not a typo. UTC isn’t actually the proper acronym in either language!) UTC 
+uses the same time zone zero as GMT.
+```
+var time1 = LocalTime.of(6, 15); // hour and minute
+var time2 = LocalTime.of(6, 15, 30); // + seconds
+var time3 = LocalTime.of(6, 15, 30, 200); // + nanoseconds
+var d = new LocalDate(); // DOES NOT COMPILE
+```
+
+Methods in LocalDate, LocalTime, LocalDateTime, and ZonedDateTime
+
+ | Can call on LocalDate? | Can call on LocalTime? | Can call on LocalDateTime or ZonedDateTime?
+ --- | --- | --- | ---
+plusYears()
+minusYears() | Yes | No | Yes
+plusMonths()
+minusMonths() | Yes | No | Yes
+plusWeeks()
+minusWeeks() | Yes | No | Yes
+plusDays()
+minusDays() | Yes | No | Yes
+plusHours()
+minusHours() | No | Yes | Yes
+plusMinutes()
+minusMinutes() | No | Yes | Yes
+plusSeconds()
+minusSeconds() | No | Yes | Yes
+plusNanos()
+minusNanos() | No | Yes | Yes
