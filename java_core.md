@@ -914,19 +914,11 @@ Methods in LocalDate, LocalTime, LocalDateTime, and ZonedDateTime
 
 Methods | Can call on LocalDate? | Can call on LocalTime? | Can call on LocalDateTime or ZonedDateTime?
  --- | --- | --- | ---
-plusYears()
-minusYears() | Yes | No | Yes
-plusMonths()
-minusMonths() | Yes | No | Yes
-plusWeeks()
-minusWeeks() | Yes | No | Yes
-plusDays()
-minusDays() | Yes | No | Yes
-plusHours()
-minusHours() | No | Yes | Yes
-plusMinutes()
-minusMinutes() | No | Yes | Yes
-plusSeconds()
-minusSeconds() | No | Yes | Yes
-plusNanos()
-minusNanos() | No | Yes | Yes
+plusYears(),minusYears() | Yes | No | Yes
+plusMonths(),minusMonths() | Yes | No | Yes
+plusWeeks(),minusWeeks() | Yes | No | Yes
+plusDays(),minusDays() | Yes | No | Yes
+plusHours(),minusHours() | No | Yes | Yes
+plusMinutes(),minusMinutes() | No | Yes | Yes
+plusSeconds(),minusSeconds() | No | Yes | Yes
+plusNanos(),minusNanos() | No | Yes | Yes
