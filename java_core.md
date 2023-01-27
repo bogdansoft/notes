@@ -912,7 +912,7 @@ var d = new LocalDate(); // DOES NOT COMPILE
 
 Methods in LocalDate, LocalTime, LocalDateTime, and ZonedDateTime
 
- | Can call on LocalDate? | Can call on LocalTime? | Can call on LocalDateTime or ZonedDateTime?
+Methods | Can call on LocalDate? | Can call on LocalTime? | Can call on LocalDateTime or ZonedDateTime?
  --- | --- | --- | ---
 plusYears()
 minusYears() | Yes | No | Yes
