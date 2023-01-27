@@ -773,6 +773,7 @@ class test
             if(i==5)break;
              System.out.println(i);
         }
+        System.out.println("hello");
     }
 } 
 
@@ -782,6 +783,7 @@ class test
 2
 3
 4
+hello
 ```
 **continue** :-These transfer Statement will bypass the flow of execution to starting point of the loop inorder to continue with next iteration by skipping all the remaining instructions .
 ```
@@ -819,6 +821,7 @@ class test
             if(i==5)  return;
             System.out.println(i);
         }
+        System.out.println("hello");
     }
 } 
 
