@@ -833,3 +833,25 @@ class test
 4
 ```
 ### Calculating with Math APIs
+
+#### Rounding Numbers
+```
+public static long round(double num)
+public static int round(float num)
+```
+There are two overloaded methods to ensure that there is enough room to store a 
+rounded double if needed. The following shows how to use this method:
+```
+long low = Math.round(123.45); // 123
+long high = Math.round(123.50); // 124
+int fromFloat = Math.round(123.45f); // 123
+```
+```
+public static double ceil(double num)
+public static double floor(double num)
+```
+The following shows how to use these methods:
+```
+double c = Math.ceil(3.14); // 4.0
+double f = Math.floor(3.14); // 3.0
+```
