@@ -54,3 +54,21 @@ Here’s an example:
 ```
 System.out.println(Arrays.compare(new int[] {1}, new int[] {2}));//-1
 ```
+Now that you know how to compare a single value, let’s look at how to compare arrays 
+of different lengths:
+- If both arrays are the same length and have the same values in each spot in the same 
+order, return zero.
+- If all the elements are the same but the second array has extra elements at the end, 
+return a negative number.
+- If all the elements are the same, but the first array has extra elements at the end, return a 
+positive number.
+- If the first element that differs is smaller in the first array, return a negative number.
+- If the first element that differs is larger in the first array, return a positive number.
+
+Finally, what does smaller mean? Here are some more rules that apply here and to 
+compareTo():
+- null is smaller than any other value.
+- For numbers, normal numeric order applies.
+- For strings, one is smaller if it is a prefix of another.
+- For strings/characters, numbers are smaller than letters.
+- For strings/characters, uppercase is smaller than lowercase.
