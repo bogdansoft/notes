@@ -52,5 +52,5 @@ System.out.println(Arrays.binarySearch(numbers, 3));
 + A positive number means the first array is larger than the second.
 Here’s an example:
 ```
-System.out.println(Arrays.compare(new int[] {1}, new int[] {2}));
+System.out.println(Arrays.compare(new int[] {1}, new int[] {2}));//-1
 ```
