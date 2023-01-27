@@ -101,4 +101,10 @@ for(int i = 0; i < twoD.length; i++) {
  System.out.print(twoD[i][j] + " "); // print element
  System.out.println(); // time for a new row
 }
+
+for(int[] inner : twoD) {
+ for(int num : inner)
+ System.out.print(num + " ");
+ System.out.println();
+}
 ```
