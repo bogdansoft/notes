@@ -297,3 +297,15 @@ var builder = new StringBuilder("pigeon dirty");
 builder.replace(3, 100, "");
 System.out.println(builder);//pig
 ```
+#### Reversing
+```
+public StringBuilder reverse()
+```
+```
+var sb = new StringBuilder("ABC");
+sb.reverse();
+System.out.println(sb);//CBA
+```
+**Often StringBuilder is used internally for performance purposes**, but the end result 
+needs to be a String. For example, maybe it needs to be passed to another method that is 
+expecting a String.
