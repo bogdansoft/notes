@@ -33,10 +33,15 @@ Target element not found in sorted array | Negative value showing one smaller th
 Unsorted array | A surprise; this result is undefined
 
 ```
-3: int[] numbers = {2,4,6,8};
-4: System.out.println(Arrays.binarySearch(numbers, 2)); // 0
-5: System.out.println(Arrays.binarySearch(numbers, 4)); // 1
-6: System.out.println(Arrays.binarySearch(numbers, 1)); // -1
-7: System.out.println(Arrays.binarySearch(numbers, 3)); // -2
-8: System.out.println(Arrays.binarySearch(numbers, 9)); // -5
+int[] numbers = {2,4,6,8};
+System.out.println(Arrays.binarySearch(numbers, 2)); // 0
+System.out.println(Arrays.binarySearch(numbers, 4)); // 1
+System.out.println(Arrays.binarySearch(numbers, 1)); // -1
+System.out.println(Arrays.binarySearch(numbers, 3)); // -2
+System.out.println(Arrays.binarySearch(numbers, 9)); // -5
+```
+```
+int[] numbers = new int[] {3,2,1};//unsorted
+System.out.println(Arrays.binarySearch(numbers, 2));
+System.out.println(Arrays.binarySearch(numbers, 3));
 ```
