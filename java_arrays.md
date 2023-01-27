@@ -53,6 +53,7 @@ System.out.println(Arrays.binarySearch(numbers, 3));
 Here’s an example:
 ```
 System.out.println(Arrays.compare(new int[] {1}, new int[] {2}));//-1
+System.out.println(Arrays.compare(new int[] {1}, new String[] {"a"})); // DOES NOT COMPILE
 ```
 Now that you know how to compare a single value, let’s look at how to compare arrays 
 of different lengths:
