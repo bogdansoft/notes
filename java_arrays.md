@@ -26,3 +26,10 @@ All we did was move the brackets, but it changed the behavior. This time we get 
 of type int[] and one variable of type int. 
 
 ### Searching
+Scenario | Result
+--- | ---
+Target element found in sorted array | Index of match
+Target element not found in sorted array | Negative value showing one smaller than the 
+negative of the index, where a match needs to be 
+inserted to preserve sorted order
+Unsorted array | A surprise; this result is undefined
