@@ -832,3 +832,4 @@ class test
 3
 4
 ```
+### Calculating with Math APIs
