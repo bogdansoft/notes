@@ -922,3 +922,50 @@ plusHours(),minusHours() | No | Yes | Yes
 plusMinutes(),minusMinutes() | No | Yes | Yes
 plusSeconds(),minusSeconds() | No | Yes | Yes
 plusNanos(),minusNanos() | No | Yes | Yes
+
+#### Working with Periods
+LocalDate and LocalDateTime have a method to convert themselves 
+into long values, equivalent to the number of milliseconds that have 
+passed since January 1, 1970, referred to as the epoch. What’s special 
+about this date? That’s what Unix started using for date standards, so 
+Java reused it.
+```
+var annually = Period.ofYears(1); // every 1 year
+var quarterly = Period.ofMonths(3); // every 3 months
+var everyThreeWeeks = Period.ofWeeks(3); // every 3 weeks
+var everyOtherDay = Period.ofDays(2); // every 2 days
+var everyYearAndAWeek = Period.of(1, 0, 7); // every year and 7 days
+```
+#### Working with Durations
+You’ve probably noticed by now that a Period is a day or more of time. There is also 
+Duration, which is intended for smaller units of time. For Duration, you can specify the 
+number of days, hours, minutes, seconds, or nanoseconds. And yes, you could pass 365 days 
+to make a year, but you really shouldn’t—that’s what Period is for.
+Conveniently, Duration works roughly the same way as Period, except it is used with 
+objects that have time. Duration is output beginning with PT, which you can think of as a 
+period of time. A Duration is stored in hours, minutes, and seconds. The number of seconds 
+includes fractional seconds.
+We can create a Duration using a number of different granularities:
+```
+var daily = Duration.ofDays(1); // PT24H
+var hourly = Duration.ofHours(1); // PT1H
+var everyMinute = Duration.ofMinutes(1); // PT1M
+var everyTenSeconds = Duration.ofSeconds(10); // PT10S
+var everyMilli = Duration.ofMillis(1); // PT0.001S
+var everyNano = Duration.ofNanos(1); // PT0.000000001S
+```
+
+Duration includes another more generic factory method. It takes a number and a 
+TemporalUnit. The idea is, say, something like “5 seconds.” However, TemporalUnit is an 
+interface. At the moment, there is only one implementation named ChronoUnit.
+The previous example could be rewritten like this:
+```
+var daily = Duration.of(1, ChronoUnit.DAYS);
+var hourly = Duration.of(1, ChronoUnit.HOURS);
+var everyMinute = Duration.of(1, ChronoUnit.MINUTES);
+var everyTenSeconds = Duration.of(10, ChronoUnit.SECONDS);
+var everyMilli = Duration.of(1, ChronoUnit.MILLIS);
+var everyNano = Duration.of(1, ChronoUnit.NANOS);
+```
+ChronoUnit also includes some convenient units such as ChronoUnit.HALF_DAYS to 
+represent 12 hours.
