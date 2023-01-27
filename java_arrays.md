@@ -45,3 +45,12 @@ int[] numbers = new int[] {3,2,1};//unsorted
 System.out.println(Arrays.binarySearch(numbers, 2));
 System.out.println(Arrays.binarySearch(numbers, 3));
 ```
+### Comparing
+#### Using compare()
++ A negative number means the first array is smaller than the second.
++ A zero means the arrays are equal.
++ A positive number means the first array is larger than the second.
+Here’s an example:
+```
+System.out.println(Arrays.compare(new int[] {1}, new int[] {2}));
+```
