@@ -8,7 +8,7 @@ sealed | The class may only be extended by a specific list of classes.
 non-sealed | A subclass of a sealed class permits potentially unnamed subclasses.
 static | Used for static nested classes defined within a class. 
 
-Trying to declare a top-level class with protected or private class will lead to a compiler error, though:
+Trying to declare a top-level class with protected or private class will lead to a compiler error, though:
 ```
 // ClownFish.java
 protected class ClownFish{} // DOES NOT COMPILE
