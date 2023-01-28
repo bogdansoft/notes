@@ -129,6 +129,65 @@ This resolution happens only at runtime because objects are only created during 
 
 That's all on the difference between static and dynamic binding in java. The bottom line is static binding is a compile-time operation while the dynamic binding is a runtime. one uses Type and the other uses Object to bind. static, private, and final methods and variables are resolved using static binding which makes their execution fast because no time is wasted to find the correct method during runtime.
 
+## Methods
+```
+public class Exercise {
+ public void bike1() {}
+ public final void bike2() {}
+ public static final void bike3() {}
+ public final static void bike4() {}
+ public modifier void bike5() {} // DOES NOT COMPILE
+ public void final bike6() {} // DOES NOT COMPILE
+ final public void bike7() {}
+}
+```
+**Method names follow the same rules we practiced with variable names**
+
+### Final variables and Objects
+
+**There’s only one modifier that can be applied to a local variable: final. **
+```
+public void zooAnimalCheckup(boolean isWeekend) {
+ final int rest;
+ if(isWeekend) rest = 5; else rest = 20;
+ System.out.print(rest);
+ final var giraffe = new Animal();//yes, even this way
+ final int[] friends = new int[5];
+ 
+ rest = 10; // DOES NOT COMPILE
+ giraffe = new Animal(); // DOES NOT COMPILE
+ friends = null; // DOES NOT COMPILE
+}
+```
+
+As shown with the rest variable, we don’t need to assign a value when a final variable 
+is declared. The rule is only that it must be assigned a value before it can be used. We can 
+even use var and final together. Contrast this with the following example:
+```
+public void zooAnimalCheckup(boolean isWeekend) {
+ final int rest;
+ if(isWeekend) rest = 5;
+ System.out.print(rest); // DOES NOT COMPILE
+}
+```
+Does using the final modifier mean we can’t modify the data? Nope. The final attribute 
+only refers to the variable reference; the contents can be freely modified (assuming the object 
+isn’t immutable).
+```
+ public static void main(String[] args) {
+        final int rest = 5;
+        rest = 12;//DOES NOT COMPILE
+        
+        final Animal giraffe = new Animal();
+        giraffe.setName("George");
+        giraffe = new Animal();//DOES NOT COMPILE
+        
+        final int[] friends = new int[5];
+        friends[2] = 2;
+    }
+```
+The final keyword restricts the user to use variables, methods, and class. It is applicable for all the types of variables such as for instance variable, static variable, and local variable. When a variable declared as final and assigned a value, we can't change the value of the variable. The final method can't be overridden by the child class. A class that is declared final cannot be extended. In case of final object, fields can be changed but the reference can't be changed.
+
 ### In the following code, how many of the imports do you think are redundant?
 ```
 import java.lang.System;
