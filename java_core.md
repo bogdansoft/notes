@@ -969,3 +969,18 @@ var everyNano = Duration.of(1, ChronoUnit.NANOS);
 ```
 ChronoUnit also includes some convenient units such as ChronoUnit.HALF_DAYS to 
 represent 12 hours.
+#### Difference between Perion and Duration
+**Duration is most suitable when we measure machine based timings where as Period is most suitable when we want to know the human readable time representation.**
+```
+ //Calculate Birth Day using Period class
+LocalDate currentDate = LocalDate.now();
+LocalDate birthday = LocalDate.of(2015, Month.DECEMBER, 31);
+Period age = Period.between(birthday, currentDate);
+System.out.println(age.getYears());//7
+
+//Calculate time different using Duration class
+Instant start = Instant.now();
+Instant end = start.plusSeconds(7200);
+Duration duration = Duration.between(start, end);
+System.out.println(duration.toHours());//2
+```
