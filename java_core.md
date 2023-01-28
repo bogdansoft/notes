@@ -146,6 +146,7 @@ public class Exercise {
 ### Final variables and Objects
 
 **There’s only one modifier that can be applied to a local variable: final. **
+
 ```
 public void zooAnimalCheckup(boolean isWeekend) {
  final int rest;
