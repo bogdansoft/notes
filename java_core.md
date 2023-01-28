@@ -191,6 +191,24 @@ isn’t immutable).
 
 **An effectively final local variable is one that is not modified after it is assigned.**
 
+### Static
+```
+public static void main(String[] args) {
+        Snake.hiss = 4;
+        Snake snake1 = new Snake();
+        Snake snake2 = new Snake();
+        snake1.hiss = 6;
+        snake2.hiss = 5;
+        System.out.println(Snake.hiss);//5
+        System.out.println(snake1.hiss);//5
+    }
+}
+
+class Snake {
+    public static long hiss = 2;
+}
+``
+
 ### In the following code, how many of the imports do you think are redundant?
 ```
 import java.lang.System;
