@@ -984,3 +984,10 @@ Instant end = start.plusSeconds(7200);
 Duration duration = Duration.between(start, end);
 System.out.println(duration.toHours());//2
 ```
+
+Class | Can use with Period? | Can use with Duration?
+--- | --- | ---
+LocalDate | Yes | No
+LocalDateTime | Yes | Yes
+LocalTime | No | Yes
+ZonedDateTime | Yes | Yes
