@@ -189,6 +189,8 @@ isn’t immutable).
 ```
 **The final keyword restricts the user to use variables, methods, and class. It is applicable for all the types of variables such as for instance variable, static variable, and local variable. When a variable declared as final and assigned a value, we can't change the value of the variable. The final method can't be overridden by the child class. A class that is declared final cannot be extended. In case of final object, fields can be changed but the reference can't be changed.**
 
+**An effectively final local variable is one that is not modified after it is assigned.**
+
 ### In the following code, how many of the imports do you think are redundant?
 ```
 import java.lang.System;
