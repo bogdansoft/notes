@@ -207,7 +207,18 @@ public static void main(String[] args) {
 class Snake {
     public static long hiss = 2;
 }
-``
+```
+### Try to Avoid static and Instance Initializers
+Using static and instance initializers can make your code much harder to read. Everything that could be done in an instance initializer could be done in a constructor instead. 
+Many people find the constructor approach easier to read.
+There is a common case to use a static initializer: when you need to initialize a static
+field and the code to do so requires more than one line. This often occurs when you want to 
+initialize a collection like an ArrayList or a HashMap. When you do need to use a static
+initializer, put all the static initialization in the same block. That way, the order is obvious
+
+**Remember that static
+imports are only for importing static members like a method or variable. Regular 
+imports are for importing a class.**
 
 ### In the following code, how many of the imports do you think are redundant?
 ```
