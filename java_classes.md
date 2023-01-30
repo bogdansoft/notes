@@ -99,3 +99,5 @@ public class Turtle {
  }
 }
 ```
+**Every class in Java has a constructor, whether you code one or not. If you don’t include 
+any constructors in the class, Java will create one for you without any parameters.**
