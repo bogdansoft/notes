@@ -191,5 +191,24 @@ public class Zebra extends Animal {
 }
 ```
 **super vs. super()**
+
 Like this and this(), super and super() are unrelated in Java. The first, super, is 
 used to reference members of the parent class, while the second, super(), calls a parent constructor.
+
+Like calling this(), calling super() can only be used as the first statement of the constructor. 
+For example, the following two class definitions will not compile:
+```
+public class Zoo {
+ public Zoo() {
+ System.out.println("Zoo created");
+ super(); // DOES NOT COMPILE
+ }
+}
+public class Zoo {
+ public Zoo() {
+ super();
+ System.out.println("Zoo created");
+ super(); // DOES NOT COMPILE
+ }
+}
+```
