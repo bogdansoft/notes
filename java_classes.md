@@ -139,3 +139,7 @@ public class Hamster {
  }
 }
 ```
+#### this vs. this()
+Despite using the same keyword, this and this() are very different. The first, this, 
+refers to an instance of the class, while the second, this(), refers to a constructor call 
+within the class.
