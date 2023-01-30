@@ -15,3 +15,22 @@ protected class ClownFish{} // DOES NOT COMPILE
 // BlueTang.java
 private class BlueTang {} // DOES NOT COMPILE
 ```
+#### Accessing the this Reference
+```
+public class Flamingo {
+ private String color = null;
+ public void setColor(String color) {
+ color = color;
+ }
+ public static void main(String... unused) {
+ var f = new Flamingo();
+ f.setColor("PINK");
+ System.out.print(f.color);
+ }
+}
+```
+```
+public void setColor(String color) {
+ this.color = color; // Sets the instance variable with method parameter
+ }
+```
