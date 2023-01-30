@@ -52,3 +52,27 @@ this.color = "white"; // Fine, but this. reference not necessary
  System.out.print(b.length + " " + b.height + " " + b.color);//0 2 white
 } }
 ```
+#### Calling the super Reference
+
+```
+class Insect {
+    protected int numberOfLegs = 4;
+    String label = "buggy";
+}
+
+ class Beetle extends Insect {
+    protected int numberOfLegs = 6;
+    short age = 3;
+
+    public void printData() {
+        System.out.println(this.label);//buggy
+        System.out.println(super.label);//buggy
+        System.out.println(this.age);//3
+        System.out.println(super.age);//DOES NOT COMPILE
+        System.out.println(numberOfLegs);//6
+    }
+     public static void main(String[] n) {
+         new Beetle().printData();
+     }
+}
+```
