@@ -160,3 +160,11 @@ is distinct.
 - The compiler inserts a default no-argument constructor if no constructors are declared.
 - If a constructor calls this(), then it must be the first line of the constructor.
 - Java does not allow cyclic constructor calls.
+```
+public class Gopher {
+ public Gopher(int dugHoles) {
+ this(5); // DOES NOT COMPILE
+ }
+}
+```
+The compiler is capable of detecting that this constructor is calling itself infinitely. 
