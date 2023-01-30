@@ -170,3 +170,26 @@ public class Gopher {
 The compiler is capable of detecting that this constructor is calling itself infinitely. 
 
 #### Calling Parent Constructors with super()
+
+The first statement of every constructor is a call to a parent constructor using super() or 
+another constructor in the class using this().
+```
+public class Animal {
+ private int age;
+ public Animal(int age) {
+ super(); // Refers to constructor in java.lang.Object
+ this.age = age;
+ }
+}
+public class Zebra extends Animal {
+ public Zebra(int age) {
+ super(age); // Refers to constructor in Animal
+ }
+ public Zebra() {
+ this(4); // Refers to constructor in Zebra with int argument
+ }
+}
+```
+**super vs. super()**
+Like this and this(), super and super() are unrelated in Java. The first, super, is 
+used to reference members of the parent class, while the second, super(), calls a parent constructor.
