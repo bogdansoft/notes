@@ -112,3 +112,30 @@ provide a default no-argument constructor. It also prevents other classes
 from instantiating the class. This is useful when a class has only static
 methods or the developer wants to have full control of all calls to create 
 new instances of the class.
+
+#### Calling Overloaded Constructors with this()
+```
+public class Hamster {
+ private String color;
+ private int weight;
+ public Hamster(int weight, String color) { // First constructor
+ this.weight = weight;
+ this.color = color;
+ }
+ public Hamster(int weight) { // Second constructor
+ this.weight = weight;
+ color = "brown";
+ }
+ public Hamster(int weight) { // Second constructor
+ Hamster(weight, "brown"); // DOES NOT COMPILE
+ }
+ public Hamster(int weight) { // Second constructor
+ new Hamster(weight, "brown"); // Compiles, but creates an extra object
+ }
+ 
+ //Solution
+ public Hamster(int weight) { // Second constructor
+ this(weight, "brown");
+ }
+}
+```
