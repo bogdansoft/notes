@@ -76,3 +76,12 @@ class Insect {
      }
 }
 ```
+
+#### Constructor
+```
+public class Bunny {
+ public bunny() {} // DOES NOT COMPILE
+ public void Bunny() {}
+ public Bunny(var food) { // DOES NOT COMPILE
+}
+```
