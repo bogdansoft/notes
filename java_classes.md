@@ -143,3 +143,14 @@ public class Hamster {
 Despite using the same keyword, this and this() are very different. The first, this, 
 refers to an instance of the class, while the second, this(), refers to a constructor call 
 within the class.
+
+Calling this() has one special rule you need to know. If you choose to call it, the this() call 
+must be the first statement in the constructor. The side effect of this is that there can be only 
+one call to this() in any constructor.
+```
+public Hamster(int weight) {
+System.out.println("chew");
+// Set weight and default color
+this(weight, "brown"); // DOES NOT COMPILE
+}
+```
