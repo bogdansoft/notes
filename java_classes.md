@@ -154,3 +154,9 @@ System.out.println("chew");
 this(weight, "brown"); // DOES NOT COMPILE
 }
 ```
+Rules:
+- A class can contain many overloaded constructors, provided the signature for each 
+is distinct.
+- The compiler inserts a default no-argument constructor if no constructors are declared.
+- If a constructor calls this(), then it must be the first line of the constructor.
+- Java does not allow cyclic constructor calls.
