@@ -101,3 +101,14 @@ public class Turtle {
 ```
 **Every class in Java has a constructor, whether you code one or not. If you don’t include 
 any constructors in the class, Java will create one for you without any parameters.**
+```
+public class Rabbit4 {
+ private Rabbit4() {}
+}
+var r4 = new Rabbit4(); // DOES NOT COMPILE
+```
+Having only **private constructors** in a class tells the compiler not to 
+provide a default no-argument constructor. It also prevents other classes 
+from instantiating the class. This is useful when a class has only static
+methods or the developer wants to have full control of all calls to create 
+new instances of the class.
