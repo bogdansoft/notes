@@ -389,3 +389,32 @@ instance initializer, or in a constructor.
 default value based on their type.
 - Order of initialization is as follows: variable declarations, then initializers, and finally 
 constructors.
+
+#### Overriding a Method
+```
+public class Marsupial {
+ public double getAverageWeight() {
+ return 50;
+ }
+}
+public class Kangaroo extends Marsupial {
+ public double getAverageWeight() {
+ return super.getAverageWeight()+20;
+ }
+  public double getAverageWeight() {
+ return getAverageWeight()+20;// StackOverflowError
+ }
+ public static void main(String[] args) {
+ System.out.println(new Marsupial().getAverageWeight()); // 50.0
+ System.out.println(new Kangaroo().getAverageWeight()); // 70.0
+ }
+}
+```
+To override a method, you must follow a number of rules. The compiler performs the following checks when you override a method:
+1. The method in the child class must have the same signature as the method in the 
+parent class.
+2. The method in the child class must be at least as accessible as the method in the 
+parent class.
+3. The method in the child class may not declare a checked exception that is new or 
+broader than the class of any exception declared in the parent class method.
+4. If the method returns a value, it must be the same or a subtype of the method in the parent class, known as covariant return types.
