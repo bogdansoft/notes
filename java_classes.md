@@ -419,4 +419,110 @@ parent class.
 broader than the class of any exception declared in the parent class method.
 4. If the method returns a value, it must be the same or a subtype of the method in the parent class, known as covariant return types.
 
-#### Rule #1: Method Signatures
+The Dog’s move() method is called the **overriding method.**
+The Animal’s move() method is called the **overridden method.**
+
+#### Rule #1:Only inherited methods can be overridden.
+
+#### Rule #2:Final and static methods cannot be overridden.
+
+#### Rule #3: The overriding method must have same argument list or it is an overload instead.
+ 
+#### Rule #4: The overriding method must have same return type (or subtype).
+ 
+#### Rule #5: The overriding method must not have more restrictive access modifier.
+ 
+#### Rule #6: The overriding method must not throw new or broader checked exceptions.
+In other words, the overriding method may throw fewer or narrower checked exceptions, or any unchecked exceptions.
+Consider the following superclass - Animal:
+```
+public class Animal {
+ 
+    protected void move() throws IOException {
+        // animal moving code...
+    }
+}
+```
+The following subclass - Dog, correctly overrides the move() method because the FileNotFoundException is a subclass of the FileIOException:
+```
+public class Dog extends Animal {
+ 
+    protected void move() throws FileNotFoundException {
+        // Dog moving code...
+    }
+}
+```
+The following example shows an illegal overriding attempt because the InterruptedException is a new and checked exception:
+```
+public class Dog extends Animal {
+ 
+    protected void move() throws IOException, InterruptedException {
+        // Dog moving code...
+    }
+}
+```
+However, the following example is a legal overriding, because the IllegalArgumentException is an unchecked exception:
+```
+public class Dog extends Animal {
+ 
+    protected void move() throws IOException, IllegalArgumentException {
+        // Dog moving code...
+    }
+}
+```
+And in the example below, the Dog class won’t compile because its move() method throws Exception which is superclass (broader) of the IOException:
+```
+public class Dog extends Animal {
+ 
+    protected void move() throws Exception {
+        // Dog moving code...
+    }
+}
+```
+#### Rule #7:Use the super keyword to invoke the overridden method from a subclass.
+
+#### Rule #8:Constructors cannot be overridden.
+
+#### Rule #9: Abstract methods must be overridden by the first concrete (non-abstract) subclass.
+
+#### Rule #10: A static method in a subclass may hide another static one in a superclass, and that’s called hiding.
+Consider the following example:
+```
+public class Animal {
+ 
+    static void sleep() {
+        System.out.println("Animal sleeps");
+    }
+ 
+
+public class Dog extends Animal {
+ 
+    static void sleep() {
+        System.out.println("Dog sleeps");
+    }
+}
+```
+Here, the sleep() method of the Dog class is said to hide the sleep() method of the Animal class. When a static method of the superclass is hidden, it requires the subclass to use a fully qualified class name of the superclass to invoke the hidden method, as shown in the doSomething() method of the Dog class below:
+```
+public class Dog extends Animal {
+ 
+    static void sleep() {
+        System.out.println("Dog sleeps");
+    }
+ 
+    void doSomething() {
+        sleep();    // this calls the hiding method
+ 
+        // because the Animal's sleep() is hidden, it requires to use
+        // a fully qualified class name to access it.
+        Animal.sleep();
+    }
+}
+```
+Note that the rules of overriding are still applied for the hiding method.
+
+#### Rule #11: The synchronized modifier has no effect on the rules of overriding.
+The synchronized modifier relates to the acquiring and releasing of a monitor object in multi-threaded context, therefore it has totally no effect on the rules of overriding. That means a synchronized method can override a non-synchronized one and vice versa.
+ 
+#### Rule #12: The strictfp modifier has no effect on the rules of overriding.
+That means the presence or absence of the strictfp modifier has absolutely no effect on the rules of overriding: it’s possible that a FP-strict method can override a non-FP-strict one and vice-versa.
