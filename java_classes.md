@@ -378,3 +378,14 @@ Or should call other constructors which would initialize them.
 3. Process all instance variable declarations in the order in which they appear in the class.
 4. Process all instance initializers in the order in which they appear in the class.
 5. Initialize the constructor, including any overloaded constructors referenced with this().
+
+Important rules you should know:
+- A class is initialized at most once by the JVM before it is referenced or used.
+- All static final variables must be assigned a value exactly once, either when they 
+are declared or in a static initializer.
+- All final fields must be assigned a value exactly once, either when they are declared, in an 
+instance initializer, or in a constructor.
+- Non-final static and instance variables defined without a value are assigned a 
+default value based on their type.
+- Order of initialization is as follows: variable declarations, then initializers, and finally 
+constructors.
