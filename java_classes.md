@@ -336,3 +336,5 @@ likely because the rules for when classes are loaded are determined by the JVM a
 For the exam, you just need to know that a class must be initialized before it is referenced 
 or used. Also, the class containing the program entry point, aka the main() method, is 
 loaded before the main() method is executed.
+
+#### Initializing final Fields
