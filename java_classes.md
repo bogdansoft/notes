@@ -289,3 +289,31 @@ overloaded constructor using this().
 - If the constructor does not contain a this() or super() reference, then the compiler 
 automatically inserts super() with no arguments as the first line of the constructor.
 - If a constructor calls super(), then it must be the first line of the constructor.
+
+#### Initializing Classes
+
+One of the most important rules with class initialization is that it happens at most once 
+for each class. The class may also never be loaded if it is not used in the program. We summarize the order of initialization for a class as follows:
+Initialize Class X
++ If there is a superclass Y of X, then initialize class Y first.
++ Process all static variable declarations in the order in which they appear in the class.
++ Process all static initializers in the order in which they appear in the class.
+Taking a look at an example, what does the following program print?
+```
+public class Animal {
+ static { System.out.print("A"); }
+}
+public class Hippo extends Animal {
+ public static void main(String[] grass) {
+ System.out.print("C");
+ new Hippo();
+ new Hippo();
+ new Hippo();
+ }
+ static { System.out.print("B"); }
+}//ABC
+```
+It prints ABC exactly once. Since the main() method is inside the Hippo class, the class 
+will be initialized first, starting with the superclass and printing AB. Afterward, the main()
+method is executed, printing C. Even though the main() method creates three instances, the 
+class is loaded only once.
