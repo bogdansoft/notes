@@ -338,3 +338,37 @@ or used. Also, the class containing the program entry point, aka the main() meth
 loaded before the main() method is executed.
 
 #### Initializing final Fields
+```
+class A {
+
+    private final boolean a;
+    private final boolean b;
+
+    public A(boolean a) {
+        this.a = a;//DOES NOT COMPILE
+    }
+
+    public A(boolean a, boolean b) {
+        this.a = a;
+        this.b = b;
+    }
+}
+```
+You can initialize b to default false. All the final variable should be initialized in constructors.
+```
+ public A(boolean a){
+     this.a = a;
+     this.b = false;
+ }
+```
+Or should call other constructors which would initialize them.
+```
+ public A(boolean a){
+     this(a, false);
+ }
+
+ public A(boolean a, boolean b){
+     this.a = a;
+     this.b = b;
+ }
+ ```
