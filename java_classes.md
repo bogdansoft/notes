@@ -410,11 +410,11 @@ public class Kangaroo extends Marsupial {
  }
 }
 ```
-To override a method, you must follow a number of rules. The compiler performs the following checks when you override a method:
+To override a method, you must follow a number of rules. The compiler performs the following checks when you override a method:
 1. The method in the child class must have the same signature as the method in the 
 parent class.
 2. The method in the child class must be at least as accessible as the method in the 
 parent class.
 3. The method in the child class may not declare a checked exception that is new or 
 broader than the class of any exception declared in the parent class method.
-4. If the method returns a value, it must be the same or a subtype of the method in the parent class, known as covariant return types.
+4. If the method returns a value, it must be the same or a subtype of the method in the parent class, known as covariant return types.
