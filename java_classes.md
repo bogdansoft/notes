@@ -294,7 +294,7 @@ automatically inserts super() with no arguments as the first line of the constru
 
 One of the most important rules with class initialization is that it happens at most once 
 for each class. The class may also never be loaded if it is not used in the program. We summarize the order of initialization for a class as follows:
-Initialize Class X
+**Initialize Class X**
 + If there is a superclass Y of X, then initialize class Y first.
 + Process all static variable declarations in the order in which they appear in the class.
 + Process all static initializers in the order in which they appear in the class.
