@@ -621,6 +621,7 @@ public class Cat implements Walk, Run {
 }
 ```
 #### Interface methods rules:
-+ Treat abstract, default, and non-static private methods as belonging to an instance of the interface.
++ Treat abstract, default, and non-static private methods as belonging to an instance of the interface.
 + Treat static methods and variables as belonging to the interface class object.
 + All private interface method types are only accessible within the interface declaration.
+
