@@ -526,3 +526,25 @@ The synchronized modifier relates to the acquiring and releasing of a monitor ob
  
 #### Rule #12: The strictfp modifier has no effect on the rules of overriding.
 That means the presence or absence of the strictfp modifier has absolutely no effect on the rules of overriding: it’s possible that a FP-strict method can override a non-FP-strict one and vice-versa.
+
+#### Creating Constructors in Abstract Classes
+```
+abstract class Mammal {
+ abstract CharSequence chew();
+ public Mammal() {
+ System.out.println(chew()); // this line compile
+ }
+}
+public class Platypus extends Mammal {
+ String chew() { return "yummy!"; }
+ public static void main(String[] args) {
+ new Platypus();
+ }
+}
+```
+ Abstract classes are initialized with constructors in the same 
+way as non-abstract classes. For example, if an abstract class does not provide a constructor, 
+the compiler will automatically insert a default no-argument constructor.
+The primary difference between a constructor in an abstract class and a non-abstract class 
+is that a constructor in an abstract class can be called only when it is being initialized by a 
+non-abstract subclass. This makes sense, as abstract classes cannot be instantiated.
