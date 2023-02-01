@@ -564,3 +564,25 @@ non-abstract subclass. This makes sense, as abstract classes cannot be instantia
 + Interface variables are implicitly public, static, and final.
 + Interface methods without a body are implicitly abstract.
 + Interface methods without the private modifier are implicitly public
+
+#### Conflicting Modifiers
+```
+public interface Dance {
+ private int count = 4; // DOES NOT COMPILE
+ protected void step(); // DOES NOT COMPILE
+}
+```
+Neither of these interface member declarations compiles, as the compiler will apply the 
+public modifier to both, resulting in a conflict.
+
+#### Differences between Interfaces and Abstract Classes
+Even though abstract classes and interfaces are both considered abstract types, only interfaces make use of implicit modifiers. How do the play() methods differ in the following two 
+definitions?
+```
+abstract class Husky { // abstract required in class declaration
+ abstract void play(); // abstract required in method declaration
+}
+interface Poodle { // abstract optional in interface declaration
+ void play(); // abstract optional in method declaration
+}
+```
