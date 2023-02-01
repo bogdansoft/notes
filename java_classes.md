@@ -548,3 +548,19 @@ the compiler will automatically insert a default no-argument constructor.
 The primary difference between a constructor in an abstract class and a non-abstract class 
 is that a constructor in an abstract class can be called only when it is being initialized by a 
 non-abstract subclass. This makes sense, as abstract classes cannot be instantiated.
+
+#### Declaring an Immutable Class
+
+1. Mark the class as final or make all of the constructors private.
+2. Mark all the instance variables private and final.
+3. Don’t define any setter methods.
+4. Don’t allow referenced mutable objects to be modified.
+5. Use a constructor to set all properties of the object, making a copy if needed.
+
+### Interfaces
+#### Inserting Implicit Modifiers
+
++ Interfaces are implicitly abstract.
++ Interface variables are implicitly public, static, and final.
++ Interface methods without a body are implicitly abstract.
++ Interface methods without the private modifier are implicitly public
