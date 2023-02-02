@@ -749,9 +749,31 @@ var mommy2 = new Crane("Cammy"); // DOES NOT COMPILE
 #### Members Automatically Added to Records
 + Constructor: A constructor with the parameters in the same order as the record 
 declaration
-+ Accessor method: One accessor for each field
++ Accessor method: One accessor for each field(getter)
 + equals(): A method to compare two elements that returns true if each field is equal in 
 terms of equals()
 + hashCode(): A consistent hashCode() method using all of the fields
 + toString(): A toString() implementation that prints each field of the record in a 
 convenient, easy-to-read format
+
+Fun fact: it is legal to have a record without any fields. It is simply declared with the 
+record keyword and parentheses:
+```
+public record Crane() {}
+```
+Every field is inherently final and cannot be modified 
+after it has been written in the constructor. In order to “modify” a record, you have to make 
+a new object and copy all of the data you want to preserve.
+```
+var cousin = new Crane(3, "Jenny");
+var friend = new Crane(cousin.numberEggs(), "Janeice");
+```
+Just as interfaces are implicitly abstract, records are also implicitly final. The final
+modifier is optional but assumed.
+```
+public final record Crane(int numberEggs, String name) {}
+```
+Like enums, that means you can’t extend or inherit a record.
+```
+public record BlueCrane() extends Crane {} // DOES NOT COMPILE
+```
