@@ -695,3 +695,9 @@ public abstract sealed class Wolf permits Timber {}
 public final class Timber extends Wolf {}
 public final class MyWolf extends Wolf {} // DOES NOT COMPILE
 ```
+####  Usage of the permits clause in sealed classes
+Location of direct subclasses | permits clause
+--- | ---
+In a different file from the sealed class | Required
+In the same file as the sealed class | Permitted, but not required
+Nested inside of the sealed class | Permitted, but not required
