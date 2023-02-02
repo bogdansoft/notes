@@ -823,3 +823,21 @@ of four flavors.
 + Can extend a class and implement interfaces
 + Can be marked abstract or final
 + Can access members of the outer class, including private members
+
+### Instantiating an Instance of an Inner Class
+There is another way to instantiate Room that looks odd at first. Okay, well, maybe not just 
+at first. This syntax isn’t used often enough to get used to it:
+```
+20: public static void main(String[] args) {
+21: var home = new Home();
+22: Room room = home.new Room(); // Create the inner class instance
+23: room.enter();
+24: }
+```
+Let’s take a closer look at lines 21 and 22. We need an instance of Home to create a Room. 
+We can’t just call new Room() inside the static main() method, because Java won’t 
+know which instance of Home it is associated with. Java solves this by calling new as if it 
+were a method on the room variable. We can shorten lines 21–23 to a single line:
+```
+21: new Home().new Room().enter(); // Sorry, it looks ugly to us too!
+```
