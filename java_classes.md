@@ -777,3 +777,42 @@ Like enums, that means you can’t extend or inherit a record.
 ```
 public record BlueCrane() extends Crane {} // DOES NOT COMPILE
 ```
+#### The Long Constructor
+First, we can just declare the constructor the compiler normally inserts automatically, which 
+we refer to as the long constructor.
+```
+public record Crane(int numberEggs, String name) {
+ public Crane(int numberEggs, String name) {
+ if (numberEggs < 0) throw new IllegalArgumentException();
+ this.numberEggs = numberEggs;
+ this.name = name;
+ }
+}
+```
+The compiler will not insert a constructor if you define one with the same list of parameters in the same order. Since each field is final, the constructor must set every field. For 
+example, this record does not compile:
+```
+public record Crane(int numberEggs, String name) {
+ public Crane(int numberEggs, String name) {} // DOES NOT COMPILE
+ 
+  public Crane {
+ this.numberEggs = 10; // DOES NOT COMPILE
+ }
+}
+```
+#### Overloaded Constructors
+You can also create overloaded constructors that take a completely different list of parameters. They are more closely related to the long-form constructor and don’t use any of the syntactical features of compact constructors.
+```
+public record Crane(int numberEggs, String name) {
+ public Crane(String firstName, String lastName) {
+ this(0, firstName + " " + lastName);
+ }
+}
+```
+### Nested Classes
+A nested class is a class that is defined within another class. A nested class can come in one 
+of four flavors.
+- Inner class: A non-static type defined at the member level of a class
+- Static nested class: A static type defined at the member level of a class
+- Local class: A class defined within a method body
+- Anonymous class: A special case of a local class that does not have a name
