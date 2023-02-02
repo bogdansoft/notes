@@ -927,3 +927,24 @@ class. A separate class has no way to refer to a local variable. However, if the
 is final or effectively final, Java can handle it by passing a copy of the value or reference 
 variable to the constructor of the local class. If it weren’t final or effectively final, these 
 tricks wouldn’t work because the value could change after the copy was made.
+
+#### Defining an Anonymous Class
+```
+public class ZooGiftShop {
+abstract class SaleTodayOnly {
+abstract int dollarsOff();
+}
+public int admission(int basePrice) {
+SaleTodayOnly sale = new SaleTodayOnly() {
+int dollarsOff() { return 3; }
+}; // Don't forget the semicolon!
+return basePrice - sale.dollarsOff();
+ } }
+```
+
+#### Modifiers in nested classes
+Permitted modifiers | Inner class | static nested class | Local class | Anonymous class
+--- | --- | --- | ---
+Access modifiers | All | All | None | None
+abstract | Yes | Yes | Yes | No
+final | Yes | Yes | Yes | No
