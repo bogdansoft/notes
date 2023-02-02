@@ -625,3 +625,57 @@ public class Cat implements Walk, Run {
 + Treat static methods and variables as belonging to the interface class object.
 + All private interface method types are only accessible within the interface declaration.
 
+### Enums
+Sometimes you want to define different methods for each enum. For example, our zoo has 
+different seasonal hours. It is cold and gets dark early in the winter. We can keep track of the 
+hours through instance variables, or we can let each enum value manage hours itself.
+```
+public enum Season {
+ WINTER {
+ public String getHours() { return "10am-3pm"; }
+ },
+ SPRING {
+ public String getHours() { return "9am-5pm"; }
+ },
+ SUMMER {
+ public String getHours() { return "9am-7pm"; }
+ },
+FALL {
+ public String getHours() { return "9am-5pm"; }
+ };
+ public abstract String getHours();
+}
+```
+It looks like we created an abstract class and a bunch of tiny 
+subclasses. In a way, we did. The enum itself has an abstract method. This means that each 
+and every enum value is required to implement this method. If we forget to implement the 
+method for one of the values, we get a compiler error:
+```
+The enum constant WINTER must implement the abstract method getHours()
+```
+But what if we don’t want each and every enum value to have a method? No problem. We 
+can create an implementation for all values and override it only for the special cases.
+```
+public enum Season {
+ WINTER {
+ public String getHours() { return "10am-3pm"; }
+ },
+ SUMMER {
+ public String getHours() { return "9am-7pm"; }
+ },
+ SPRING, FALL;
+ public String getHours() { return "9am-5pm"; }
+}
+```
+This looks better. We only code the special cases and let the others use the enum-provided 
+implementation.
+An enum can even implement an interface, as this just requires overriding the 
+abstract methods:
+```
+public interface Weather { int getAverageTemperature(); }
+
+public enum Season implements Weather {
+ WINTER, SPRING, SUMMER, FALL;
+ public int getAverageTemperature() { return 30; }
+}
+```
