@@ -969,10 +969,52 @@ Object lemurAsObject = lemur;
 ```
 Even though the Lemur object has been assigned to a reference with a different type, the 
 object itself has not changed and still exists as a Lemur object in memory. What has changed, 
-then, is our ability to access methods within the Lemur class with the lemurAsObject reference. Without an explicit cast back to Lemur, as you see in the next section, we no longer 
+then, is our ability to access methods within the Lemur class with the lemurAsObject reference. Without an explicit cast back to Lemur, as you see in the next section, we no longer 
 have access to the Lemur properties of the object.
 
 We can summarize this principle with the following two rules:
 1. The type of the object determines which properties exist within the object in memory.
 2. The type of the reference to the object determines which methods and variables are 
 accessible to the Java program.
+#### Casting Interfaces
+```
+interface Canine {}
+interface Dog {}
+class Wolf implements Canine {}
+
+public class BadCasts {
+public static void main(String[] args) {
+Wolf wolfy = new Wolf();
+Dog badWolf = (Dog)wolfy;//ClassCastException
+} }
+```
+```
+class Rodent {}
+
+public class Capybara extends Rodent {
+public static void main(String[] args) {
+Rodent rodent = new Rodent();
+var capybara = (Capybara)rodent; // ClassCastException
+}
+}
+s program throws an exception on line 6. We can replace line 6 with the following.
+if(rodent instanceof Capybara c) {
+// Do stuff
+}
+```
+Now the code snippet doesn’t throw an exception at runtime and performs the cast only 
+if the instanceof operator is successful.
+Just as the compiler does not allow casting an object to unrelated types, it also does not 
+allow instanceof to be used with unrelated types. We can demonstrate this with our unrelated 
+Bird and Fish classes:
+```
+public class Bird {}
+public class Fish {
+ public static void main(String[] args) {
+ Fish fish = new Fish();
+ if (fish instanceof Bird b) { // DOES NOT COMPILE
+ // Do stuff
+ }
+ }
+}
+```
