@@ -816,3 +816,9 @@ of four flavors.
 - Static nested class: A static type defined at the member level of a class
 - Local class: A class defined within a method body
 - Anonymous class: A special case of a local class that does not have a name
+
+#### Inner classes have the following properties:
++ Can be declared public, protected, package, or private
++ Can extend a class and implement interfaces
++ Can be marked abstract or final
++ Can access members of the outer class, including private members
