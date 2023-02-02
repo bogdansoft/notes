@@ -679,3 +679,10 @@ public enum Season implements Weather {
  public int getAverageTemperature() { return 30; }
 }
 ```
+### Sealing Classes
+Sealed Class Keywords
+- sealed: Indicates that a class or interface may only be extended/implemented by named 
+classes or interfaces
+- permits: Used with the sealed keyword to list the classes and interfaces allowed
+- non-sealed: Applied to a class or interface that extends a sealed class, indicating that it 
+can be extended by unspecified classes
