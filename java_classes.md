@@ -944,7 +944,7 @@ return basePrice - sale.dollarsOff();
 
 #### Modifiers in nested classes
 Permitted modifiers | Inner class | static nested class | Local class | Anonymous class
---- | --- | --- | ---
+--- | --- | --- | --- | ---
 Access modifiers | All | All | None | None
 abstract | Yes | Yes | Yes | No
 final | Yes | Yes | Yes | No
