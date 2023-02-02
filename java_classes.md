@@ -956,6 +956,7 @@ Can extend a class or implement any number of interfaces? | Yes | Yes | Yes | No
 Can access instance members of enclosing class? | Yes | No | Yes (if declared in an instance method) | Yes (if declared in an instance method)
 Can access local variables of enclosing method? | N/A | N/A | Yes (if final or effectively final) | Yes (if final or effectively final)
 
+**Pass by reference because of polymorfism**
 ## Object vs. Reference
 In Java, all objects are accessed by reference, so as a developer you never have direct 
 access to the object itself. Conceptually, though, you should consider the object as the entity 
@@ -988,6 +989,7 @@ Wolf wolfy = new Wolf();
 Dog badWolf = (Dog)wolfy;//ClassCastException
 } }
 ```
+#### The instanceof Operator
 ```
 class Rodent {}
 
@@ -1018,3 +1020,12 @@ public class Fish {
  }
 }
 ```
+
+### Polimorphism
+Polymorphism’s ability to replace methods at runtime via overriding is one of the most 
+important properties of Java. It allows you to create complex inheritance models with subclasses that have their own custom implementation of overridden methods. It also means 
+the parent class does not need to be updated to use the custom or overridden method. If the 
+method is properly overridden, then the overridden version will be used in all places that it 
+is called.
+Remember, you can choose to limit polymorphic behavior by marking methods final, 
+which prevents them from being overridden by a subclass.
