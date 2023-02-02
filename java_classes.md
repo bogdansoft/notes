@@ -904,3 +904,19 @@ Let’s take a look at an example:
 ```
 Line 6 instantiates the nested class. Since the class is static, you do not need an instance 
 of Park to use it. You are allowed to access private instance variables, as shown on line 7
+
+#### Writing a Local Class
+A local class is a nested class defined within a method. Like local variables, a local class 
+declaration does not exist until the method is invoked, and it goes out of scope when the 
+method returns. This means you can create instances only from within the method. Those 
+instances can still be returned from the method. This is just how local variables work.
+Local classes are not limited to being declared only inside methods. For 
+example, they can be declared inside constructors and initializers. For 
+simplicity, we limit our discussion to methods in this chapter.
+
+Local classes have the following properties:
++ They do not have an access modifier.
++ They can be declared final or abstract.
++ They have access to all fields and methods of the enclosing class (when defined in an 
+instance method).
++ They can access final and effectively final local variables.
