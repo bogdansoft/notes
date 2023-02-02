@@ -721,3 +721,37 @@ subclasses.
 within the same file or the subclasses are nested within the sealed class.
 + Interfaces can be sealed to limit the classes that implement them or the interfaces that 
 extend them.
+
+### Encapsulating Data with Records
+A POJO, which stands for Plain Old Java Object, is a class used to model and pass data 
+around, often with few or no complex methods (hence the “plain” part of the definition). You might have also heard of a JavaBean, which is POJO that has some additional rules applied. Let’s create a simple POJO with two fields:
+```
+public class Crane {
+ int numberEggs;
+ String name;
+ public Crane(int numberEggs, String name) {
+ this.numberEggs = numberEggs;
+ this.name = name;
+ }
+}
+```
+```
+public record Crane(int numberEggs, String name) { }
+
+var mommy = new Crane(4, "Cammy");
+System.out.println(mommy.numberEggs()); // 4
+System.out.println(mommy.name()); // Cammy
+
+var mommy1 = new Crane("Cammy", 4); // DOES NOT COMPILE
+var mommy2 = new Crane("Cammy"); // DOES NOT COMPILE
+```
+
+#### Members Automatically Added to Records
++ Constructor: A constructor with the parameters in the same order as the record 
+declaration
++ Accessor method: One accessor for each field
++ equals(): A method to compare two elements that returns true if each field is equal in 
+terms of equals()
++ hashCode(): A consistent hashCode() method using all of the fields
++ toString(): A toString() implementation that prints each field of the record in a 
+convenient, easy-to-read format
