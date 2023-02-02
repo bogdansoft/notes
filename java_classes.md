@@ -685,4 +685,13 @@ Sealed Class Keywords
 classes or interfaces
 - permits: Used with the sealed keyword to list the classes and interfaces allowed
 - non-sealed: Applied to a class or interface that extends a sealed class, indicating that it 
-can be extended by unspecified classes
+can be extended by unspecified classes(without permits keyword)
+
+```
+public class sealed Frog permits GlassFrog {} // DOES NOT COMPILE
+public final class GlassFrog extends Frog {}
+
+public abstract sealed class Wolf permits Timber {}
+public final class Timber extends Wolf {}
+public final class MyWolf extends Wolf {} // DOES NOT COMPILE
+```
