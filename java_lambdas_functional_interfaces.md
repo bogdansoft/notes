@@ -14,7 +14,7 @@ public interface Soar {
 }
 ```
 It is not. Since toString() is a public method implemented in Object, it does not 
-count toward the single abstract method test. On the other hand, the following implementation of Dive is a functional interface:
+count toward the single abstract method test. On the other hand, the following implementation of Dive is a functional interface:
 ```
 @FunctionalInterface//COMPILE
 public interface Dive {
@@ -25,3 +25,13 @@ public interface Dive {
 }
 ```
 The dive() method is the single abstract method, while the others are not counted since they are public methods defined in the Object class.
+
+####  Common functional interfaces
+Functional interface | Return type | Method name | # of parameters
+--- | --- | --- | ---
+Supplier<T> | T | get() | 0
+Consumer<T> | void | accept(T)|  1 (T)
+BiConsumer<T, U> | void | accept(T,U) | 2 (T, U)
+Predicate<T> | boolean | test(T) | 1 (T)
+BiPredicate<T, U> | boolean | test(T,U) | 2 (T, U)
+Function<T, R> | R | apply(T) | 1 (T)
