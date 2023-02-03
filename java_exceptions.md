@@ -24,3 +24,15 @@ Error | Description
 ExceptionInInitializerError | Thrown when static initializer throws exception and doesn’t handle it
 StackOverflowError | Thrown when method calls itself too many times (called infinite recursion because method typically calls itself without end)
 NoClassDefFoundError | Thrown when class that code uses is available at compile time but not runtime
+```
+public void visitSnakes() {
+ try {
+ } catch (IllegalArgumentException e) {
+ } catch (NumberFormatException e) { // DOES NOT COMPILE
+ }
+}
+```
+Since NumberFormatException is a subclass, it will always be caught by the first catch block, 
+making the second catch block unreachable code that does not compile. Likewise, for the 
+exam, you need to know that FileNotFoundException is a subclass of IOException and 
+cannot be used in a similar manner.
