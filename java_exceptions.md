@@ -150,3 +150,55 @@ System.out.println("Finally Block");
 }
 }
 ```
+#### Understanding Suppressed Exceptions
+```
+public class TurkeyCage implements AutoCloseable {
+    private final int quantity;
+
+    public TurkeyCage(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @Override
+    @SuppressWarnings("warning")
+    public void close(){//} throws RuntimeException {
+        System.out.println("the gate closed");
+    }
+
+    public static void main(String[] args) {
+        final var tc = new TurkeyCage(50);
+
+        try (tc) {
+            System.out.println("turkeys in");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+```
+**If more than two resources throw an exception, the first one to be thrown 
+becomes the primary exception, and the rest are grouped as suppressed 
+exceptions. And since resources are closed in the reverse of the order 
+in which they are declared, the primary exception will be on the last 
+declared resource that throws an exception.**
+
+Keep in mind that suppressed exceptions apply only to exceptions thrown in the try
+clause. The following example does not throw a suppressed exception:
+```
+5: public static void main(String[] args) {
+6: try (JammedTurkeyCage t = new JammedTurkeyCage()) {
+7: throw new IllegalStateException("Turkeys ran off");
+8: } finally {
+9: throw new RuntimeException("and we couldn't find them");
+10: }
+11: }
+```
+Line 7 throws an exception. Then Java tries to close the resource and adds a suppressed 
+exception to it. Now we have a problem. The finally block runs after all this. Since line 9
+also throws an exception, the previous exception from line 7 is lost, with the code printing 
+the following:
+```
+Exception in thread "main" java.lang.RuntimeException:
+ and we couldn't find them
+ at JammedTurkeyCage.main(JammedTurkeyCage.java:9)
+```
