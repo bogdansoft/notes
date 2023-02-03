@@ -48,3 +48,16 @@ Function | Function | compose() | Function
 Predicate | Predicate | and() | Predicate
 Predicate | Predicate | negate() | —
 Predicate | Predicate | or() | Predicate
+
+ #### Parameter List Formats
+You have three formats for specifying parameter types within a lambda: without types, with 
+types, and with var. The compiler requires all parameters in the lambda to use the same 
+format.
+ ```
+5: (var x, y) -> "Hello" // DOES NOT COMPILE
+6: (var x, Integer y) -> true // DOES NOT COMPILE
+7: (String x, var y, Integer z) -> true // DOES NOT COMPILE
+8: (Integer x, y) -> "goodbye" // DOES NOT COMPILE
+```
+Lines 5 needs to remove var from x or add it to y. Next, lines 6 and 7 need to use the type 
+or var consistently. Finally, line 8 needs to remove Integer from x or add a type to y.
