@@ -14,6 +14,6 @@ Checked exception | Description
 --- | ---
 FileNotFoundException (Subclass of IOException) | Thrown programmatically when code tries to reference file that does not exist.
 IOException | Thrown programmatically when problem reading or writing file.
-NotSerializableException (Subclass of IOException) | Thrown programmatically when attempting to serialize or deserialize nonserializable class.
+NotSerializableException (Subclass of IOException) | Thrown programmatically when attempting to serialize or deserialize nonserializable class.
 ParseException | Indicates problem parsing input.
 SQLException | Thrown when error related to accessing database.
