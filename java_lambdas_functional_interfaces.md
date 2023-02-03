@@ -38,3 +38,13 @@ Function<T, R> | R | apply(T) | 1 (T)
 BiFunction<T, U, R> | R | apply(T,U) | 2 (T, U)
 UnaryOperator<T> | T | apply(T) | 1 (T)
 BinaryOperator<T> | T | apply(T,T) | 2 (T, T)
+
+ ####  Convenience methods
+Interface instance | Method return type | Method name | Method parameters
+ --- | --- | --- | ---
+Consumer | Consumer | andThen() | Consumer
+Function | Function | andThen() | Function
+Function | Function | compose() | Function
+Predicate | Predicate | and() | Predicate
+Predicate | Predicate | negate() | —
+Predicate | Predicate | or() | Predicate
