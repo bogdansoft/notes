@@ -89,3 +89,33 @@ fall();
 System.out.println("all better");
 }
 ```
+#### Introducing Try-with-Resources
+Let’s take a look at a method that opens a file, reads the data, and closes it:
+```
+public void readFile(String file) {
+FileInputStream is = null;
+try {
+is = new FileInputStream("myfile.txt");
+// Read file data
+} catch (IOException e) {
+ e.printStackTrace();
+ } finally {
+ if(is != null) {
+ try {
+ is.close();
+ } catch (IOException e2) {
+ e2.printStackTrace();
+ }
+ }
+ }
+```
+ Let’s take a look at our same example using a try-with-resources statement:
+```
+public void readFile(String file) {
+try (FileInputStream is = new FileInputStream("myfile.txt")) {
+// Read file data
+} catch (IOException e) {
+e.printStackTrace();
+}
+ }
+```
