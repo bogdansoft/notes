@@ -132,3 +132,21 @@ interface AutoCloseable {
  public void close() throws Exception;
 }
 ```
+#### Applying Effectively Final
+While resources are often created in the try-with-resources statement, it is possible to declare 
+them ahead of time, provided they are marked final or effectively final. The syntax uses the 
+resource name in place of the resource declaration, separated by a semicolon (;). Let’s try 
+another example:
+```
+public static void main(String... xyz) {
+final var bookReader = new MyFileClass(4);
+MyFileClass movieReader = new MyFileClass(5);
+try (bookReader;
+var tvReader = new MyFileClass(6);
+movieReader) {
+System.out.println("Try Block");
+} finally {
+System.out.println("Finally Block");
+}
+}
+```
