@@ -46,8 +46,18 @@ public void visitManatees() {
  }
 }
 ```
+#### Applying a Multi-catch Block
 ```
 catch(Exception1 e | Exception2 e | Exception3 e) // DOES NOT COMPILE
 catch(Exception1 e1 | Exception2 e2 | Exception3 e3) // DOES NOT COMPILE
 catch(Exception1 | Exception2 | Exception3 e)
+
+try {
+ throw new IOException();
+} catch (FileNotFoundException | IOException p) {} // DOES NOT COMPILE since FileNotFoundException is a subclass of IOException
+```
+Specifying related exceptions in the multi-catch is redundant, and the compiler gives a 
+message such as this:
+```
+The exception FileNotFoundException is already caught by the alternative IOException
 ```
