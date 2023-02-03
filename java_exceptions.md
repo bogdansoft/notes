@@ -36,3 +36,13 @@ Since NumberFormatException is a subclass, it will always be caught by the first
 making the second catch block unreachable code that does not compile. Likewise, for the 
 exam, you need to know that FileNotFoundException is a subclass of IOException and 
 cannot be used in a similar manner.
+```
+public void visitManatees() {
+ try {
+ } catch (NumberFormatException e1) {
+ System.out.println(e1);
+ } catch (IllegalArgumentException e2) {
+ System.out.println(e1); // DOES NOT COMPILE
+ }
+}
+```
