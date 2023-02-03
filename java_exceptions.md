@@ -125,7 +125,7 @@ block. We refer to this “hidden” finally block as an implicit finally block 
 and used by the compiler automatically. You can still create a programmer-defined finally
 block when using a try-with-resources statement; just be aware that the implicit one will be 
 called first.
-}
+
 **Inheriting AutoCloseable requires implementing a compatible close() method**
 ```
 interface AutoCloseable {
