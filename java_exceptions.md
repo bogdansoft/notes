@@ -17,3 +17,10 @@ IOException | Thrown programmatically when problem reading or writing file.
 NotSerializableException (Subclass of IOException) | Thrown programmatically when attempting to serialize or deserialize nonserializable class.
 ParseException | Indicates problem parsing input.
 SQLException | Thrown when error related to accessing database.
+
+####  Errors
+Error | Description
+--- | ---
+ExceptionInInitializerError | Thrown when static initializer throws exception and doesn’t handle it
+StackOverflowError | Thrown when method calls itself too many times (called infinite recursion because method typically calls itself without end)
+NoClassDefFoundError | Thrown when class that code uses is available at compile time but not runtime
