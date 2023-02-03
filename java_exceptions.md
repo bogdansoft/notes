@@ -61,3 +61,31 @@ message such as this:
 ```
 The exception FileNotFoundException is already caught by the alternative IOException
 ```
+```
+try { // DOES NOT COMPILE catch and finally blocks are in the wrong order
+fall();
+} finally {
+System.out.println("all better");
+} catch (Exception e) {
+System.out.println("get up");
+}
+try { // DOES NOT COMPILE there must be a catch or finally block
+fall();
+}
+try {
+ // Protected code
+} catch (exception_type identifier) {
+ // Exception handler
+} finally {
+ 
+ // finally block
+}
+```
+The finally block always executes, whether or not an exception occurs.
+```
+try {
+fall();
+} finally {
+System.out.println("all better");
+}
+```
