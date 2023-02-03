@@ -46,3 +46,8 @@ public void visitManatees() {
  }
 }
 ```
+```
+catch(Exception1 e | Exception2 e | Exception3 e) // DOES NOT COMPILE
+catch(Exception1 e1 | Exception2 e2 | Exception3 e3) // DOES NOT COMPILE
+catch(Exception1 | Exception2 | Exception3 e)
+```
