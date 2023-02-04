@@ -356,5 +356,5 @@ System.out.println(new DecimalFormat("Your Balance $#,###,###.##").format(d));//
 #### DecimalFormat symbols
 Symbol | Meaning | Examples
 --- | --- | ---
-# | Omit position if no digit exists for it. | $2.2
+\# | Omit position if no digit exists for it. | $2.2
 0 | Put 0 in position if no digit exists for it. | $002.20
