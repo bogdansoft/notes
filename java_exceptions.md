@@ -8,6 +8,12 @@ ClassCastException | Thrown when attempt is made to cast object to class of whic
 NullPointerException | Thrown when there is a null reference where an object is required.
 IllegalArgumentException | Thrown by programmer to indicate that method has been passed illegal or inappropriate argument.
 NumberFormatException(Subclass of IllegalArgumentException) | Thrown when attempt is made to convert String to numeric type but String doesn’t have appropriate format.
+DateTimeException | Time zones, datelines and inconsistent date formats can cause Java to throw various DateTimeExceptions at runtime.
+NegativeArraySizeException | If a minus sign slips into the array size declaration
+ArrayStoreException | The ArrayStoreException shares similarities with the ClassCastException. This Java runtime exception happens when the wrong type of object is placed into an array.
+UnsupportedOperationException |  It is thrown to indicate that the requested operation is not supported.
+NoSuchElementException | You can't iterate through an empty iterator. The following code, which attempts to get the next element in an empty HashSet throws this exception
+ConcurrentModificationException | This exception rises when an object is tried to be modified concurrently when it is not permissible i.e when one thread is iterating over some collection class object and if some other thread tried to modify or try to make some changes on that collection object
 
 #### Checked Exceptions
 Checked exception | Description
