@@ -358,3 +358,28 @@ Symbol | Meaning | Examples
 --- | --- | ---
 \# | Omit position if no digit exists for it. | $2.2
 0 | Put 0 in position if no digit exists for it. | $002.20
+
+#### Formatting Dates and Times
+The date and time classes support many methods to get data out of them.
+```
+LocalDate date = LocalDate.of(2022, Month.OCTOBER, 20);
+System.out.println(date.getDayOfWeek()); // THURSDAY
+System.out.println(date.getMonth()); // OCTOBER
+System.out.println(date.getYear()); // 2022
+System.out.println(date.getDayOfYear()); // 293
+```
+Java provides a class called DateTimeFormatter to display standard formats.
+```
+LocalDate date = LocalDate.of(2022, Month.OCTOBER, 20);
+LocalTime time = LocalTime.of(11, 12, 34);
+LocalDateTime dt = LocalDateTime.of(date, time);
+System.out.println(date.format(DateTimeFormatter.ISO_LOCAL_DATE));
+System.out.println(time.format(DateTimeFormatter.ISO_LOCAL_TIME));
+System.out.println(dt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+```
+The code snippet prints the following:
+```
+2022-10-20
+11:12:34
+2022-10-20T11:12:34
+```
