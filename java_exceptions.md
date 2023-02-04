@@ -167,7 +167,7 @@ public class TurkeyCage implements AutoCloseable {
 
     @Override
     @SuppressWarnings("warning")
-    public void close(){// throws RuntimeException {
+    public void close(){// throws RuntimeException {//here does not compile without throws
         System.out.println("the gate closed");
     }
 
