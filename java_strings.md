@@ -1,4 +1,4 @@
-## Strings
+## Strings, Formats
 ```
 System.out.println(1 + 2); // 3
 System.out.println("a" + "b"); // ab
@@ -340,4 +340,16 @@ If the literal is not yet in the string pool, Java will add it at this time.
 var name = "Hello World";
 var name2 = new String("Hello World").intern();
 System.out.println(name == name2); // true
+```
+
+#### Formatting Values
+```
+public final String format(double number)
+public final String format(long number)
+```
+```
+double d = 12345.678;
+System.out.println(new DecimalFormat("###,###,###.00").format(d));//12,345.68
+System.out.println(new DecimalFormat("000,000,000.00000").format(d));//000,012,345.67800
+System.out.println(new DecimalFormat("Your Balance $#,###,###.##").format(d));//Your Balance $12,345.68
 ```
