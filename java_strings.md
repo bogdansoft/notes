@@ -353,3 +353,8 @@ System.out.println(new DecimalFormat("###,###,###.00").format(d));//12,345.68
 System.out.println(new DecimalFormat("000,000,000.00000").format(d));//000,012,345.67800
 System.out.println(new DecimalFormat("Your Balance $#,###,###.##").format(d));//Your Balance $12,345.68
 ```
+#### DecimalFormat symbols
+Symbol | Meaning | Examples
+--- | --- | ---
+# | Omit position if no digit exists for it. | $2.2
+0 | Put 0 in position if no digit exists for it. | $002.20
