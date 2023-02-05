@@ -53,3 +53,14 @@ Method | Description | Can add elements? | Can replace elements? | Can delete el
 Arrays.asList(varargs) | Returns fixed size list backed by an array | No | Yes | No
 List.of(varargs) | Returns immutable list | No | No | No
 List.copyOf(collection) | Returns immutable list with copy of original collection’s values | No | No | No
+
+####  List methods
+Method | Description
+--- | ---
+public boolean add(E element) | Adds element to end (available on all Collection APIs).
+public void add(int index, E element) | Adds element at index and moves the rest toward the end.
+public E get(int index) | Returns element at index.
+public E remove(int index) | Removes element at index and moves the rest toward the front.
+public default void replaceAll(UnaryOperator<E> op) | Replaces each element in list with result of operator.
+public E set(int index, E e) | Replaces element at index and returns original. Throws IndexOutOfBoundsException if index is invalid.
+public default void sort(Comparator<? super E> c) | Sorts list. We cover this later in the chapter in the “Sorting Data” section.
