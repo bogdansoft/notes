@@ -81,7 +81,6 @@ System.out.println(stringArray.length); // 2
 Set<Character> letters = Set.of('z', 'o', 'o');
 Set<Character> copy = Set.copyOf(letters);
 ```
-**In addition to being a list, LinkedList - is a Deque. 
-The main benefit of a LinkedList is that it implements both the List and Deque
+**The main benefit of a LinkedList is that it implements both the List and Deque
 interfaces. The trade-off is that it isn’t as efficient as a “pure” queue. You can use the 
 ArrayDeque class if you don’t need the List methods.**
