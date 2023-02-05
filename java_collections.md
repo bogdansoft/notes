@@ -25,3 +25,16 @@ System.out.println(birds.isEmpty()); // false
 System.out.println(birds.size()); // 2
 birds.clear(); // []
 ```
+#### Check Contents
+The contains() method checks whether a certain value is in the Collection. The method 
+signature is as follows:
+```
+public boolean contains(Object object)
+```
+The following shows how to use this method:
+```
+Collection<String> birds = new ArrayList<>();
+birds.add("hawk"); // [hawk]
+System.out.println(birds.contains("hawk")); // true
+System.out.println(birds.contains("robin")); // false
+```
