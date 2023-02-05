@@ -137,3 +137,16 @@ public V replace(K key, V value) | Replaces value for given key if key is set. R
 public void replaceAll(BiFunction<K, V, V> func) | Replaces each value with results of function.
 public int size() | Returns number of entries (key/value pairs) in map.
 public Collection<V> values() | Returns Collection of all values.
+
+#### Putting if Absent
+The putIfAbsent() method sets a value in the map but skips it if the value is already set to a 
+non-null value.
+```
+Map<String, String> favorites = new HashMap<>();
+favorites.put("Jenny", "Bus Tour");
+favorites.put("Tom", null);
+favorites.putIfAbsent("Jenny", "Tram");
+favorites.putIfAbsent("Sam", "Tram");
+favorites.putIfAbsent("Tom", "Tram");
+System.out.println(favorites); // {Tom=Tram, Jenny=Bus Tour, Sam=Tram}
+```
