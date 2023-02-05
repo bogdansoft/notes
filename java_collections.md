@@ -88,9 +88,6 @@ ArrayDeque class if you don’t need the List methods.**
 #### Queue methods
 Functionality | Methods
 --- | ---
-Add to back | public boolean add(E e)
-public boolean offer(E e)
-Read from front | public E element()
-public E peek()
-Get and remove from front | public E remove() 
-public E poll()
+Add to back | public boolean add(E e) public boolean offer(E e)
+Read from front | public E element() public E peek()
+Get and remove from front | public E remove()  public E poll()
