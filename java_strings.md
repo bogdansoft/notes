@@ -377,3 +377,10 @@ System.out.println(date.format(DateTimeFormatter.ISO_LOCAL_DATE));//2022-10-20
 System.out.println(time.format(DateTimeFormatter.ISO_LOCAL_TIME));//11:12:34
 System.out.println(dt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));//2022-10-20T11:12:34
 ```
+#### Customizing the Date/Time Format
+If you don’t want to use one of the predefined formats, DateTimeFormatter supports a 
+custom format using a date format String.
+```
+var f = DateTimeFormatter.ofPattern("MMMM dd, yyyy 'at' hh:mm");
+System.out.println(dt.format(f)); // October 20, 2022 at 11:12
+```
