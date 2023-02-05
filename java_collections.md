@@ -108,3 +108,12 @@ Functionality | Methods
 Add to the front/top | public void push(E e)
 Remove from the front/top | public E pop()
 Get first element | public E peek()
+
+#### Using the Map Interface
+```
+Map.of("key1", "value1", "key2", "value2");
+Map.ofEntries(
+ Map.entry("key1", "value1"),
+ Map.entry("key2", "value2"));
+Map.copyOf(map);
+```
