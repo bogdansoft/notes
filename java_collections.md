@@ -124,3 +124,16 @@ public void clear() | Removes all keys and values from map.
 public boolean containsKey(Object key) | Returns whether key is in map.
 public boolean containsValue(Object value) | Returns whether value is in map.
 public Set<Map.Entry<K,V>> entrySet() | Returns Set of key/value pairs.
+public void forEach(BiConsumer<K key, V value>) | Loops through each key/value pair.
+public V get(Object key) | Returns value mapped by key or null if none is mapped.
+public V getOrDefault(Object key, V defaultValue) | Returns value mapped by key or default value if none is mapped.
+public boolean isEmpty() | Returns whether map is empty.
+public Set<K> keySet() | Returns set of all keys.
+public V merge(K key, V value, Function(<V, V, V> func)) | Sets value if key not set. Runs function if key is set, to determine new value. Removes if value is null.
+public V put(K key, V value) | Adds or replaces key/value pair. Returns previous value or null.
+public V putIfAbsent(K key, V value) | Adds value if key not present and returns null. Otherwise, returns existing value.
+public V remove(Object key) | Removes and returns value mapped to key. Returns null if none.
+public V replace(K key, V value) | Replaces value for given key if key is set. Returns original value or null if none.
+public void replaceAll(BiFunction<K, V, V> func) | Replaces each value with results of function.
+public int size() | Returns number of entries (key/value pairs) in map.
+public Collection<V> values() | Returns Collection of all values.
