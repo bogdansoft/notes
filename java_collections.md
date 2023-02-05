@@ -91,3 +91,19 @@ Functionality | Methods
 Add to back | public boolean add(E e) public boolean offer(E e)
 Read from front | public E element() public E peek()
 Get and remove from front | public E remove()  public E poll()
+
+####  Deque methods
+Functionality | Methods
+--- | ---
+Add to front | public void addFirst(E e) 
+               public boolean offerFirst(E e)
+Add to back | public void addLast(E e) 
+              public boolean offerLast(E e)
+Read from front public E getFirst()
+public E peekFirst()
+Read from back public E getLast()
+public E peekLast()
+Get and remove from front public E removeFirst()
+public E pollFirst()
+Get and remove from back public E removeLast()
+public E pollLast()
