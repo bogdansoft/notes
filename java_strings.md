@@ -373,13 +373,7 @@ Java provides a class called DateTimeFormatter to display standard formats.
 LocalDate date = LocalDate.of(2022, Month.OCTOBER, 20);
 LocalTime time = LocalTime.of(11, 12, 34);
 LocalDateTime dt = LocalDateTime.of(date, time);
-System.out.println(date.format(DateTimeFormatter.ISO_LOCAL_DATE));
-System.out.println(time.format(DateTimeFormatter.ISO_LOCAL_TIME));
-System.out.println(dt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-```
-The code snippet prints the following:
-```
-2022-10-20
-11:12:34
-2022-10-20T11:12:34
+System.out.println(date.format(DateTimeFormatter.ISO_LOCAL_DATE));//2022-10-20
+System.out.println(time.format(DateTimeFormatter.ISO_LOCAL_TIME));//11:12:34
+System.out.println(dt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));//2022-10-20T11:12:34
 ```
