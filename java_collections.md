@@ -117,3 +117,10 @@ Map.ofEntries(
  Map.entry("key2", "value2"));
 Map.copyOf(map);
 ```
+####  Map methods
+Method | Description
+--- | ---
+public void clear() | Removes all keys and values from map.
+public boolean containsKey(Object key) | Returns whether key is in map.
+public boolean containsValue(Object value) | Returns whether value is in map.
+public Set<Map.Entry<K,V>> entrySet() | Returns Set of key/value pairs.
