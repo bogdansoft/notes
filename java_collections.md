@@ -64,3 +64,24 @@ public E remove(int index) | Removes element at index and moves the rest toward 
 public default void replaceAll(UnaryOperator<E> op) | Replaces each element in list with result of operator.
 public E set(int index, E e) | Replaces element at index and returns original. Throws IndexOutOfBoundsException if index is invalid.
 public default void sort(Comparator<? super E> c) | Sorts list. We cover this later in the chapter in the “Sorting Data” section.
+
+#### Converting from List to an Array
+```
+List<String> list = new ArrayList<>();
+list.add("hawk");
+list.add("robin");
+Object[] objectArray = list.toArray();
+String[] stringArray = list.toArray(new String[0]);
+list.clear();
+System.out.println(objectArray.length); // 2
+System.out.println(stringArray.length); // 2
+```
+#### Working with Set Methods
+```
+Set<Character> letters = Set.of('z', 'o', 'o');
+Set<Character> copy = Set.copyOf(letters);
+```
+**In addition to being a list, LinkedList - is a Deque. 
+The main benefit of a LinkedList is that it implements both the List and Deque
+interfaces. The trade-off is that it isn’t as efficient as a “pure” queue. You can use the 
+ArrayDeque class if you don’t need the List methods.**
