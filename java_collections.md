@@ -101,3 +101,10 @@ Read from front | public E getFirst() public E peekFirst()
 Read from back | public E getLast() public E peekLast()
 Get and remove from front | public E removeFirst() public E pollFirst()
 Get and remove from back | public E removeLast() public E pollLast()
+
+####  Using a Deque as a stack
+Functionality | Methods
+--- | ---
+Add to the front/top | public void push(E e)
+Remove from the front/top | public E pop()
+Get first element | public E peek()
