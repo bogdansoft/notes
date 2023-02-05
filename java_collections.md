@@ -38,3 +38,18 @@ birds.add("hawk"); // [hawk]
 System.out.println(birds.contains("hawk")); // true
 System.out.println(birds.contains("robin")); // false
 ```
+#### Removing
+```
+public boolean remove(Object object)
+public boolean removeIf(Predicate<? super E> filter)
+```
+#### Iterating
+```
+public void forEach(Consumer<? super T> action)
+```
+#### Factory methods to create a List
+Method | Description | Can add elements? | Can replace elements? | Can delete elements?
+--- | --- | --- | --- | ---
+Arrays.asList(varargs) | Returns fixed size list backed by an array | No | Yes | No
+List.of(varargs) | Returns immutable list | No | No | No
+List.copyOf(collection) | Returns immutable list with copy of original collection’s values | No | No | No
