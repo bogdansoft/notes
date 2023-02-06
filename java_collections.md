@@ -199,3 +199,15 @@ HashSet | Set | No | Yes | No
 LinkedList | List, Deque | No | No | No
 TreeMap | Map | Yes | No | Yes
 TreeSet | Set | Yes | No | Yes
+
+### Sorting Data
+**When working with a String, remember that numbers sort before 
+letters, and uppercase letters sort before lowercase letters.**
+
+#### Creating a Comparable Class
+The Comparable interface has only one method. In fact, this is the entire interface:
+```
+public interface Comparable<T> {
+ int compareTo(T o);
+}
+```
