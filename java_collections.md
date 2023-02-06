@@ -190,7 +190,7 @@ Queue | Yes | Yes(retrieved in defined order) | No | Yes
 Set | No | No|  No|  No
 
 #### Collection attributes
-Type | Java Collections Framework interface | Sorted? | Calls hashCode? | Calls compareTo?
+Type | Interface | Sorted? | Calls hashCode? | Calls compareTo?
 --- | --- | --- | --- | ---
 ArrayDeque | Deque | No | No | No
 ArrayList | List | No | No | No
