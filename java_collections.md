@@ -232,3 +232,78 @@ public int compareTo(Duck d) {
  System.out.println(ducks); // [Puddles, Quack]
 }}
 ```
+```
+public class Main {
+    public static void main(String[] args) {
+        Product first = new Product(1, "kiwi");
+        Product second = new Product(2, "apple");
+        System.out.println(first.compareTo(second));//10
+
+        Comparator<Product> byId = Comparator.comparingInt(Product::getId);
+        var list = new ArrayList<>(Arrays.asList(second, first));
+        list.forEach(System.out::println);
+        //2 apple
+        //1 kiwi
+
+        Collections.sort(list, byId);
+        list.forEach(System.out::println);
+        //1 kiwi
+        //2 apple
+    }
+}
+
+class Product implements Comparable<Product> {
+    private Integer id;
+    private String name;
+
+    public Product(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return this.name.compareTo(o.name);
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + name;
+    }
+}
+```
+
+#### Comparison of Comparable and Comparator
+Difference | Comparable | Comparator
+--- | --- | ---
+Package name | java.lang | java.util 
+Interface must be implemented by class comparing? | Yes | No
+Method name in interface | compareTo() | compare()
+Number of parameters | 1 | 2
+Common to declare using a lambda | No | Yes
