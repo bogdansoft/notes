@@ -74,6 +74,15 @@ orElseGet(Supplier s) | Returns result of calling Supplier | Returns value
 orElseThrow() | Throws NoSuchElementException | Returns value
 orElseThrow(Supplier s) | Throws exception created by calling Supplier | Returns value
 
+ ####  Optional types for primitives
+Option | OptionalDouble | OptionalInt | OptionalLong
+ --- | --- | --- | ---
+Getting as primitive | getAsDouble() | getAsInt() | getAsLong()
+orElseGet() parameter type | DoubleSupplier | IntSupplier | LongSupplier
+Return type of max() and min() | OptionalDouble | OptionalInt | OptionalLong
+Return type of sum() | double | int | long
+Return type of average() | OptionalDouble | OptionalDouble | OptionalDouble
+ 
  ## Streams
  ####  Creating a source
 Method | Finite or infinite? | Notes
