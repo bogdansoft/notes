@@ -179,3 +179,11 @@ Has a null value in map | N/A(mapping function not called) | Update key’s valu
 Has a non-null value in map | null | Remove key from map
 Has a non-null value in map | A non-null value | Set key to mapping function result
 Is not in map | N/A(mapping function not called) | Add key with value parameter to map directly without calling mapping function
+
+### Comparing Collection Types
+####  Java Collections Framework types
+Type | Can contain duplicate elements? | Elements always ordered? | Has keys and values? | Must add/remove in specific order?
+List | Yes | Yes(by index) | No | No
+Map | Yes(for values) | No | Yes | No
+Queue | Yes | Yes(retrieved in defined order) | No | Yes
+Set | No | No|  No|  No
