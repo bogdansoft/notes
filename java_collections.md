@@ -150,3 +150,20 @@ favorites.putIfAbsent("Sam", "Tram");
 favorites.putIfAbsent("Tom", "Tram");
 System.out.println(favorites); // {Tom=Tram, Jenny=Bus Tour, Sam=Tram}
 ```
+#### Merging Data
+The merge() method adds logic of what to choose. Suppose we want to choose the ride with 
+the longest name. We can write code to express this by passing a mapping function to the 
+merge() method:
+```
+BiFunction<String, String, String> function = (v1, v2) -> v1.length() > v2.length() ? v1 : v2;
+Map<String, String> map = new HashMap<>();
+map.put("Jenny", "Bus Tour");
+map.put("Tom", "Tram");
+
+var jenny = map.merge("Jenny", "Skyride", function);
+var tom = map.merge("Tom", "Skyride", function);
+
+map.forEach((key, value) -> System.out.println(key + " " + value));//Tom Skyride Jenny BusTour
+System.out.println(jenny);//Bus Tour
+System.out.println(tom);//Skyride
+```
