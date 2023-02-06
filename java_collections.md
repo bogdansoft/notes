@@ -167,3 +167,15 @@ map.forEach((key, value) -> System.out.println(key + " " + value));//Tom Skyride
 System.out.println(jenny);//Bus Tour
 System.out.println(tom);//Skyride
 ```
+
+Notice that the mapping function isn’t called. If it were, we’d have a 
+NullPointerException. The mapping function is used only when there are two actual 
+values to decide between.
+
+####  Behavior of the merge() method
+If the requested key ________ | And mapping function returns ________ | Then:
+--- | --- | ---
+Has a null value in map | N/A(mapping function not called) | Update key’s value in map with value parameter 
+Has a non-null value in map | null | Remove key from map
+Has a non-null value in map | A non-null value | Set key to mapping function result
+Is not in map | N/A(mapping function not called) | Add key with value parameter to map directly without calling mapping function
