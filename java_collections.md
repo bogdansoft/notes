@@ -173,7 +173,7 @@ NullPointerException. The mapping function is used only when there are two actua
 values to decide between.
 
 ####  Behavior of the merge() method
-If the requested key ________ | And mapping function returns ________ | Then:
+If the requested key | And mapping function returns | Then:
 --- | --- | ---
 Has a null value in map | N/A(mapping function not called) | Update key’s value in map with value parameter 
 Has a non-null value in map | null | Remove key from map
