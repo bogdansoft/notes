@@ -73,3 +73,15 @@ orElse(T other) | Returns other parameter | Returns value
 orElseGet(Supplier s) | Returns result of calling Supplier | Returns value
 orElseThrow() | Throws NoSuchElementException | Returns value
 orElseThrow(Supplier s) | Throws exception created by calling Supplier | Returns value
+
+ ## Streams
+ ####  Creating a source
+Method | Finite or infinite? | Notes
+ --- | --- | ---
+Stream.empty() | Finite | Creates Stream with zero elements.
+Stream.of(varargs) | Finite | Creates Stream with elements listed.
+coll.stream() | Finite | Creates Stream from Collection.
+coll.parallelStream() | Finite | Creates Stream from Collection where the stream can run in parallel.
+Stream.generate(supplier) | Infinite | Creates Stream by calling Supplier for each element upon request.
+Stream.iterate(seed,unaryOperator) | Infinite | Creates Stream by using seed for first element and then calling UnaryOperator for each subsequent element upon request.
+Stream.iterate(seed,predicate, unaryOperator) | Finite or infinite | Creates Stream by using seed for first element and then calling UnaryOperator for each subsequent element upon request. Stops if Predicate returns false
