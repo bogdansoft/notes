@@ -1,4 +1,4 @@
-## Lambdas and Functional Interfaces
+## Lambdas and Functional Interfaces and Streams
 
 #### Assigning Lambdas to var
 ```
@@ -61,3 +61,15 @@ format.
 ```
 Lines 5 needs to remove var from x or add it to y. Next, lines 6 and 7 need to use the type 
 or var consistently. Finally, line 8 needs to remove Integer from x or add a type to y.
+
+ ## Optional
+#### Common Optional instance methods
+Method | When Optional is empty | When Optional contains value
+ --- | --- | ---
+get() | Throws exception | Returns value
+ifPresent(Consumer c) | Does nothing | Calls Consumer with value
+isPresent() | Returns false | Returns true
+orElse(T other) | Returns other parameter | Returns value
+orElseGet(Supplier s) | Returns result of calling Supplier | Returns value
+orElseThrow() | Throws NoSuchElementException | Returns value
+orElseThrow(Supplier s) | Throws exception created by calling Supplier | Returns value
