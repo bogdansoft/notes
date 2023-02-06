@@ -347,3 +347,21 @@ public class Handler {
  }
 }
 ```
+#### Optional Syntax for Invoking a Generic Method
+```
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(Util.compare(Long.valueOf(33L), Long.valueOf(33L)));//true
+        System.out.println(Util.compare(Long.valueOf(33L), new String("33")));//false
+        System.out.println(Util.<Long>compare(33L, 33L));//true
+        System.out.println(Util.<Long>compare(Long.valueOf(33L), Long.valueOf(33L)));//true
+        System.out.println(Util.<Long>compare(Long.valueOf(33L), new String("33")));//DOES NOT COMPILE
+    }
+}
+
+class Util {
+    static <T> boolean compare(T t1, T t2) {
+        return t1.equals(t2);
+    }
+}
+```
