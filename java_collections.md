@@ -368,6 +368,6 @@ class Util {
 ####  Types of bounds
 Type of bound | Syntax | Example
 --- | --- | ---
-Unbounded wildcard | ? | List<?> a = new ArrayList/<String>();
+Unbounded wildcard | ? | List<?> a = new ArrayList\<String>();
 Wildcard with upper bound | ? extends type | List<? extends Exception> a = new ArrayList<RuntimeException>();
 Wildcard with lower bound | ? super type | List<? super Exception> a = new ArrayList<Object>();
