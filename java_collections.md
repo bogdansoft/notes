@@ -307,3 +307,13 @@ Interface must be implemented by class comparing? | Yes | No
 Method name in interface | compareTo() | compare()
 Number of parameters | 1 | 2
 Common to declare using a lambda | No | Yes
+
+####  Helper static methods for building a Comparator
+Method | Description
+--- | ---
+comparing(function) | Compare by results of function that returns any Object (or primitive autoboxed into Object).
+comparingDouble(function) | Compare by results of function that returns double.
+comparingInt(function) | Compare by results of function that returns int.
+comparingLong(function) | Compare by results of function that returns long.
+naturalOrder() | Sort using order specified by the Comparable implementation on object itself.
+reverseOrder() | Sort using reverse of order specified by Comparable implementation on object itself.
