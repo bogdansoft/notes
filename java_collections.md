@@ -198,4 +198,4 @@ HashMap | Map | No | Yes | No
 HashSet | Set | No | Yes | No
 LinkedList | List, Deque | No | No | No
 TreeMap | Map | Yes | No | Yes
-TreeSet Set Yes No Yes
+TreeSet | Set | Yes | No | Yes
