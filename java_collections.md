@@ -188,3 +188,14 @@ List | Yes | Yes(by index) | No | No
 Map | Yes(for values) | No | Yes | No
 Queue | Yes | Yes(retrieved in defined order) | No | Yes
 Set | No | No|  No|  No
+
+#### Collection attributes
+Type | Java Collections Framework interface | Sorted? | Calls hashCode? | Calls compareTo?
+--- | --- | --- | --- | ---
+ArrayDeque | Deque | No | No | No
+ArrayList | List | No | No | No
+HashMap | Map | No | Yes | No
+HashSet | Set | No | Yes | No
+LinkedList | List, Deque | No | No | No
+TreeMap | Map | Yes | No | Yes
+TreeSet Set Yes No Yes
