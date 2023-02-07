@@ -120,3 +120,19 @@ Map<Boolean, List<String>> map = ohMy.collect(
  Collectors.partitioningBy(s -> s.length() <= 5));
 System.out.println(map); // {false=[tigers], true=[lions, bears]}
 ```                                                 
+#### Teeing Collectors
+We can use teeing() to return multiple values of your own.
+First, define the return type. We use a record here:
+```
+record Separations(String spaceSeparated, String commaSeparated) {}
+```
+Now we write the stream. As you read, pay attention to the number of Collectors:
+```
+var list = List.of("x", "y", "z");
+Separations result = list.stream()
+ .collect(Collectors.teeing(
+ Collectors.joining(" "),
+ Collectors.joining(","),
+ (s, c) -> new Separations(s, c)));
+System.out.println(result);//Separations[spaceSeparated=x y z, commaSeparated=x,y,z]    
+```                                            
