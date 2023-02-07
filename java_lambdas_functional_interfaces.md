@@ -109,3 +109,14 @@ Map<Integer, Set<String>> map = ohMy.collect(
  Collectors.toSet()));
 System.out.println(map); // {5=[lions, bears], 6=[tigers]}
 ```
+Partitioning is a special case of grouping. With partitioning, there are only two possible 
+groups: true and false. Partitioning is like splitting a list into two parts.
+Suppose that we are making a sign to put outside each animal’s exhibit. We have two sizes 
+of signs. One can accommodate names with five or fewer characters. The other is needed for 
+longer names. We can partition the list according to which sign we need.
+```
+var ohMy = Stream.of("lions", "tigers", "bears");
+Map<Boolean, List<String>> map = ohMy.collect(
+ Collectors.partitioningBy(s -> s.length() <= 5));
+System.out.println(map); // {false=[tigers], true=[lions, bears]}
+```                                                 
