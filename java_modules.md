@@ -36,11 +36,8 @@ public | Available to all classes | Accessible only if package is exported
 ####  Reviewing directives
 Directive | Description
 --- | ---
-exports package;
-exports package to module; | Makes package available outside module
-requires module;
-requires transitive module; | Specifies another module as dependency
-opens package;
-opens package to module; | Allows package to be used with reflection
+exports package; exports package to module; | Makes package available outside module
+requires module; requires transitive module; | Specifies another module as dependency
+opens package; opens package to module; | Allows package to be used with reflection
 provides serviceInterface with implName; | Makes service available
 uses serviceInterface; | References service
