@@ -94,3 +94,10 @@ coll.parallelStream() | Finite | Creates Stream from Collection where the stream
 Stream.generate(supplier) | Infinite | Creates Stream by calling Supplier for each element upon request.
 Stream.iterate(seed,unaryOperator) | Infinite | Creates Stream by using seed for first element and then calling UnaryOperator for each subsequent element upon request.
 Stream.iterate(seed,predicate, unaryOperator) | Finite or infinite | Creates Stream by using seed for first element and then calling UnaryOperator for each subsequent element upon request. Stops if Predicate returns false
+
+ #### Grouping, Partitioning, and Mapping
+ ```
+var ohMy = Stream.of("lions", "tigers", "bears");
+Map<Integer, List<String>> map = ohMy.collect(Collectors.groupingBy(String::length));
+System.out.println(map);//{5=[lions, bears], 6=[tigers]}
+```
