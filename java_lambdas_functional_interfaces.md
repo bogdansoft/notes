@@ -101,3 +101,11 @@ var ohMy = Stream.of("lions", "tigers", "bears");
 Map<Integer, List<String>> map = ohMy.collect(Collectors.groupingBy(String::length));
 System.out.println(map);//{5=[lions, bears], 6=[tigers]}
 ```
+```
+var ohMy = Stream.of("lions", "tigers", "bears");
+Map<Integer, Set<String>> map = ohMy.collect(
+ Collectors.groupingBy(
+ String::length,
+ Collectors.toSet()));
+System.out.println(map); // {5=[lions, bears], 6=[tigers]}
+```
