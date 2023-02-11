@@ -20,3 +20,10 @@ A few situations where a programmer should consider following YAGNI are:
 + If a programmer is asked to link different databases of cancer patients of a hospital with a health application, the developer should not consider the hospitals which are already closed. They may never open, and the patient database must have already moved to active hospitals.
 + Some programmers may create abstractions even when they are having just one well-defined case in anticipation of the addition of cases. So, they write unnecessary codes and make assumptions about further cases. This should be avoided.
 + Use of If-else logic even if the “else” part is always going to be negative in all the test scenarios encountered.
+
+#### SOLID Principle
+1)Single Responsibility Principle (SRP)
+2)Open/Closed Principle (OCP)
+3) Liskov Substitution Principle (LSP)
+4) Interface Segregation Principle (ISP)
+5) Dependency Inversion Principle (DIP)
