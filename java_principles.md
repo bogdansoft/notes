@@ -22,8 +22,8 @@ A few situations where a programmer should consider following YAGNI are:
 + Use of If-else logic even if the “else” part is always going to be negative in all the test scenarios encountered.
 
 #### SOLID Principle
-1)Single Responsibility Principle (SRP)
-2)Open/Closed Principle (OCP)
-3) Liskov Substitution Principle (LSP)
-4) Interface Segregation Principle (ISP)
-5) Dependency Inversion Principle (DIP)
+1. Single Responsibility Principle (SRP)
+2. Open/Closed Principle (OCP)
+3. Liskov Substitution Principle (LSP)
+4. Interface Segregation Principle (ISP)
+5. Dependency Inversion Principle (DIP)
