@@ -27,3 +27,7 @@ A few situations where a programmer should consider following YAGNI are:
 3. Liskov Substitution Principle (LSP)
 4. Interface Segregation Principle (ISP)
 5. Dependency Inversion Principle (DIP)
+
+####  SoC - Separation of Concerns
+
+The Separation of Concerns principle is simple. It states that a programmer should not write the program as one single block, instead the code should be broken into chunks, such that each component is able to complete a simple distinct job.
